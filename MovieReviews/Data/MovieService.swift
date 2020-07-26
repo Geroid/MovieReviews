@@ -21,6 +21,66 @@ enum APIError: Error {
 
 class MovieService {
 
+    var session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
+    var mapper: CriticMapper
+
+    init(mapper: CriticMapper = CriticMapper()) {
+        self.mapper = mapper
+    }
+
+
+    func getCritics(completion: ((Result<[Critic], Error>) -> Void)?) {
+        let request = getRequest(endpoint: "critics/all.json")!
+        session.dataTask(with: request) { [mapper] data, response, error in
+            if let currentError = error {
+                completion?(.failure(currentError))
+                return
+            }
+
+            guard
+                let resultData = data,
+                let criticsJson = try? JSONSerialization.jsonObject(with: resultData, options: []) as? [String: Any],
+                let criticsListData = criticsJson["results"] as? [[String:Any]]
+                else {
+                    completion?(.failure(APIError.resultParsingFailed))
+                    return
+            }
+            let critics: [Critic] = criticsListData.compactMap { try? mapper.convertCritic(from: $0)}
+            print("--------------\n")
+            completion?(.success((critics)))
+        }.resume()
+    }
+
+    func getReviews(completion: ((Result<[Review], Error>) -> Void)?) {
+        let request = getRequest(endpoint: "reviews/search.json")!
+
+        session.dataTask(with: request) { data, response, error in
+            if let currentError = error {
+                completion?(.failure(currentError))
+                return
+            }
+
+            guard
+                let resultData = data,
+                let reviewsJson = try? JSONSerialization.jsonObject(with: resultData, options: []) as? [String:Any],
+                let reviewListData = reviewsJson["results"] as? [[String: Any]]
+                else {
+                    completion?(.failure(APIError.resultParsingFailed))
+                    return
+            }
+            print(reviewListData)
+            let reviews: [Review] = []
+            completion?(.success((reviews)))
+        }.resume()
+    }
+
+    func searchReviews() {
+
+    }
+
+    func searchCritic() {
+        
+    }
 
     // MARK: -Helpers
 
