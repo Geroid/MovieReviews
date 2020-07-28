@@ -22,6 +22,7 @@ class ReviewMapper {
         return Review(
             title: json["display_title"] as? String ?? "",
             summaryShort: json["summaty_short"] as? String ?? "",
+            byline: json["byline"] as? String ?? "",
             reviewURL: reviewUrl,
             pictureURL: picruteUrl,
             date: publicationDate.flatMap{ DateHelper.dateFormatter.date(from: $0) } ?? Date() )

@@ -46,7 +46,6 @@ class MovieService {
                     return
             }
             let critics: [Critic] = criticsListData.compactMap { try? mapper.convertCritic(from: $0)}
-            print("--------------\n")
             completion?(.success((critics)))
         }.resume()
     }
@@ -54,7 +53,7 @@ class MovieService {
     func getReviews(completion: ((Result<[Review], Error>) -> Void)?) {
         let request = getRequest(endpoint: "reviews/search.json")!
 
-        session.dataTask(with: request) { data, response, error in
+        session.dataTask(with: request) { [mapper] data, response, error in
             if let currentError = error {
                 completion?(.failure(currentError))
                 return
@@ -68,14 +67,21 @@ class MovieService {
                     completion?(.failure(APIError.resultParsingFailed))
                     return
             }
-            print(reviewListData)
-            let reviews: [Review] = []
+
+            let reviews: [Review] = reviewListData.compactMap{ try? mapper.convertReview(from: $0)}
             completion?(.success((reviews)))
         }.resume()
     }
 
-    func searchReviews() {
+    func searchReviews(title: String) {
+        let request = getRequest(endpoint: "search.json?query=" + title)
 
+//        session.dataTask(with: request) { data, response, error in
+//            if let currentError = error {
+//                completion?(.failure(currentError))
+//                return
+//            }
+//        }
     }
 
     func searchCritic() {

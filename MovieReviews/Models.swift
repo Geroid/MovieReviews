@@ -19,6 +19,7 @@ struct Critic {
 struct Review {
     var title: String
     var summaryShort: String
+    var byline: String
     var reviewURL: String
     var pictureURL: String
     var date: Date
