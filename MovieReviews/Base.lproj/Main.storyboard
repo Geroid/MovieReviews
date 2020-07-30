@@ -149,7 +149,7 @@
         <!--Critics List View Controller-->
         <scene sceneID="Mte-2U-CJL">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" id="M4N-G4-4ti" customClass="CriticsListViewController" customModule="MovieReviews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CriticsListViewController" autoresizesArchivedViewToFullSize="NO" id="M4N-G4-4ti" customClass="CriticsListViewController" customModule="MovieReviews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sLn-rM-yWS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

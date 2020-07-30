@@ -9,7 +9,7 @@
 import UIKit
 
 class CriticsViewController: UIViewController {
-
+    
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var profileStatusLabel: UILabel!
@@ -17,19 +17,15 @@ class CriticsViewController: UIViewController {
     
     var critic: Critic!
     var reviews: [Review] = []
-
+    
     private var url: URL?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure(with: critic)
         profilePhoto.image = nil
     }
-
-    //    override func viewWillLayoutSubviews() {
-    //           profileBioLabel.sizeToFit()
-    //    }
-
+    
     func configure(with model: Critic) {
         profileName.text = "\(model.name)"
         profileStatusLabel.text = "\(model.status)"
@@ -40,18 +36,17 @@ class CriticsViewController: UIViewController {
         }
         setImage(urlString: model.pictureURL)
     }
-
-
+    
 }
 
 extension CriticsViewController {
-
+    
     private func setImage(urlString: String){
         guard let imageURL = URL(string: urlString) else {
             return
         }
         url = imageURL
-
+        
         DispatchQueue.global(qos: .utility).async { [weak self] in
             guard let data = try? Data(contentsOf: imageURL) else {
                 return
@@ -61,5 +56,5 @@ extension CriticsViewController {
             }
         }
     }
-
+    
 }

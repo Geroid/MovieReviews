@@ -15,7 +15,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lEP-7m-iqL" translatesAutoresizingMaskIntoConstraints="NO" id="n2o-mn-Y1R">
                 <rect key="frame" x="0.0" y="0.0" width="394" height="180"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wKs-AO-pHA">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wKs-AO-pHA">
                         <rect key="frame" x="8" y="8" width="110" height="162"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="wKs-AO-pHA" secondAttribute="height" multiplier="1:1" constant="-52" id="9Uf-gY-How"/>

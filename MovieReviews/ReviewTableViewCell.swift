@@ -9,25 +9,25 @@
 import UIKit
 
 class ReviewTableViewCell: UITableViewCell {
-
+    
     // MARK: - Outlets
-
+    
     @IBOutlet weak var reviewPhoto: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var linkButton: UIButton!
-
+    
     private var url: URL?
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.masksToBounds = false
     }
-
-
-
+    
+    
+    
     override func prepareForReuse() {
         super.prepareForReuse()
     }
@@ -44,24 +44,24 @@ extension ReviewTableViewCell {
         dateLabel.text = "\(review.date)"
         setImage(urlString: review.pictureURL)
     }
-
-
+    
+    
     func setImage(urlString: String){
         guard let imageURL = URL(string: urlString) else {
             return
         }
         url = imageURL
-
+        
         DispatchQueue.global(qos: .utility).async { [weak self] in
             guard let data = try? Data(contentsOf: imageURL) else {
                 return
             }
             DispatchQueue.main.async { [weak self] in
-                self?.imageView?.image = UIImage(data: data)
+                self?.reviewPhoto?.image = UIImage(data: data)
             }
         }
     }
-
+    
     override open var frame: CGRect {
         get {
             return super.frame

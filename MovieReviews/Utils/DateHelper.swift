@@ -9,7 +9,7 @@
 import Foundation
 
 class DateHelper {
-
+    
     static var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
@@ -18,5 +18,5 @@ class DateHelper {
         formatter.timeStyle = .medium
         return formatter
     }()
-
+    
 }
