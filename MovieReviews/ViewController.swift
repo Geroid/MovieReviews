@@ -29,6 +29,10 @@ class ViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         loadReviews(offset: currentOffset)
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self,
+                                            action: #selector(didPullToRefresh),
+                                            for: .valueChanged)
     }
 
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
@@ -42,8 +46,13 @@ class ViewController: UIViewController {
            }
     }
 
+    @objc private func didPullToRefresh() {
+        loadReviews(offset: currentOffset)
+    }
+
 
     func loadReviews(offset: Int) {
+        reviews.removeAll()
         service.getReviews(offset: offset){ [weak self] result in
             guard let self = self else { return }
 
@@ -52,8 +61,10 @@ class ViewController: UIViewController {
                 for i in reviews {
                     self.reviews.append(i)
                 }
-                self.tableView.reloadData()
-
+                DispatchQueue.main.async {
+                    self.tableView.refreshControl?.endRefreshing()
+                    self.tableView.reloadData()
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -61,7 +72,7 @@ class ViewController: UIViewController {
     }
 
     func changeController() {
-        var vc: UIViewController?
+//        var vc: UIViewController?
     }
     
 }

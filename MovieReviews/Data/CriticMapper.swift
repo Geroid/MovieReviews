@@ -17,7 +17,6 @@ class CriticMapper {
         let img = (resource as AnyObject)["src"]
 
         return Critic(
-//            id: 1,
             name: json["display_name"] as? String ?? "",
             status: json["status"] as? String ?? "",
             bio: json["bio"] as? String ?? "",

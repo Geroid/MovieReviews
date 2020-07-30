@@ -73,15 +73,27 @@ class MovieService {
         }.resume()
     }
 
-    func searchReviews(title: String) {
-        let request = getRequest(endpoint: "search.json?query=" + title)
+    func searchReviews(query: String, completion: ((Result<[Review], Error>) -> Void)?) {
+        let request = getRequest(endpoint: "search.json?query=" + query)!
 
-//        session.dataTask(with: request) { data, response, error in
-//            if let currentError = error {
-//                completion?(.failure(currentError))
-//                return
-//            }
-//        }
+        session.dataTask(with: request) {[mapper] data, response, error in
+            if let currentError = error {
+                completion?(.failure(currentError))
+                return
+            }
+
+            guard
+                let resultData = data,
+                let reviewsJson = try? JSONSerialization.jsonObject(with: resultData, options: []) as? [String:Any],
+            let reviewListData = reviewsJson["results"] as? [[String: Any]]
+                else {
+                    completion?(.failure(APIError.resultParsingFailed))
+                    return
+            }
+
+            let reviews: [Review] = reviewListData.compactMap{ try? mapper.convertReview(from: $0)}
+                completion?(.success((reviews)))
+            }.resume()
     }
 
     func searchCritic() {
