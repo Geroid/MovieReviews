@@ -10,10 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Outlets
+
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerLabel: UILabel!
 
+    // MARK: - Properties
+    
     private let cellReuseIdentifier = String(describing: ReviewTableViewCell.self)
     private let interitemSpasing: CGFloat = 10
     private let criticsListViewController = CriticsListViewController()
@@ -47,12 +51,12 @@ class ViewController: UIViewController {
     }
 
     @objc private func didPullToRefresh() {
+        reviews.removeAll()
         loadReviews(offset: currentOffset)
     }
 
 
     func loadReviews(offset: Int) {
-        reviews.removeAll()
         service.getReviews(offset: offset){ [weak self] result in
             guard let self = self else { return }
 
