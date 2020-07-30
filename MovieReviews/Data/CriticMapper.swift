@@ -34,7 +34,7 @@ class CriticMapper {
 
         return Review(
             title: json["display_title"] as? String ?? "",
-            summaryShort: json["summaty_short"] as? String ?? "",
+            summaryShort: json["summary_short"] as? String ?? "",
             byline: json["byline"] as? String ?? "",
             reviewURL: reviewUrl,
             pictureURL: picruteUrl,

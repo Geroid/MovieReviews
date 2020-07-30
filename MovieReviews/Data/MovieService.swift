@@ -52,7 +52,6 @@ class MovieService {
 
     func getReviews(offset: Int, completion: ((Result<[Review], Error>) -> Void)?) {
         let request = getRequest(endpoint: "reviews/search.json?", params: ["offset" : offset])!
-
         session.dataTask(with: request) { [mapper] data, response, error in
             if let currentError = error {
                 completion?(.failure(currentError))
@@ -74,8 +73,7 @@ class MovieService {
     }
 
     func searchReviews(query: String, completion: ((Result<[Review], Error>) -> Void)?) {
-        let request = getRequest(endpoint: "search.json?query=" + query)!
-
+        let request = getRequest(endpoint: "reviews/search.json?", params: ["query": query])!
         session.dataTask(with: request) {[mapper] data, response, error in
             if let currentError = error {
                 completion?(.failure(currentError))
@@ -94,10 +92,6 @@ class MovieService {
             let reviews: [Review] = reviewListData.compactMap{ try? mapper.convertReview(from: $0)}
                 completion?(.success((reviews)))
             }.resume()
-    }
-
-    func searchCritic() {
-        
     }
 
     // MARK: -Helpers

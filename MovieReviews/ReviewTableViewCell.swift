@@ -10,6 +10,8 @@ import UIKit
 
 class ReviewTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var reviewPhoto: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
@@ -17,11 +19,13 @@ class ReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var linkButton: UIButton!
 
+    private var url: URL?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.masksToBounds = false
     }
-    private var url: URL?
+
 
 
     override func prepareForReuse() {
@@ -37,7 +41,7 @@ extension ReviewTableViewCell {
         titleLabel.text = "\(review.title)"
         detailsLabel.text = "\(review.summaryShort)"
         authorLabel.text = "\(review.byline)"
-        dateLabel.text = "date"
+        dateLabel.text = "\(review.date)"
         setImage(urlString: review.pictureURL)
     }
 
@@ -54,19 +58,7 @@ extension ReviewTableViewCell {
             }
             DispatchQueue.main.async { [weak self] in
                 self?.imageView?.image = UIImage(data: data)
-
             }
-        }
-    }
-
-    func resizeImage(at url: URL, for size: CGSize) -> UIImage? {
-        guard let image = UIImage(contentsOfFile: url.path) else {
-            return nil
-        }
-
-        let renderer = UIGraphicsImageRenderer(size: size)
-        return renderer.image { (context) in
-            image.draw(in: CGRect(origin: .zero, size: size))
         }
     }
 

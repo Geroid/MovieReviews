@@ -14,7 +14,7 @@ class CriticsViewController: UIViewController {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var profileStatusLabel: UILabel!
     @IBOutlet weak var profileBioLabel: UILabel!
-
+    
     var critic: Critic!
     var reviews: [Review] = []
 
@@ -26,14 +26,18 @@ class CriticsViewController: UIViewController {
         profilePhoto.image = nil
     }
 
-//    override func viewWillLayoutSubviews() {
-//           profileBioLabel.sizeToFit()
-//    }
+    //    override func viewWillLayoutSubviews() {
+    //           profileBioLabel.sizeToFit()
+    //    }
 
     func configure(with model: Critic) {
         profileName.text = "\(model.name)"
         profileStatusLabel.text = "\(model.status)"
-        profileBioLabel.text = "\(model.bio)"
+        if(model.bio == "") {
+            profileBioLabel.isHidden = true
+        } else {
+            profileBioLabel.text = "\(model.bio)"
+        }
         setImage(urlString: model.pictureURL)
     }
 
@@ -54,7 +58,6 @@ extension CriticsViewController {
             }
             DispatchQueue.main.async { [weak self] in
                 self?.profilePhoto?.image = UIImage(data: data)
-
             }
         }
     }

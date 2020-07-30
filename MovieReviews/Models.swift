@@ -9,7 +9,6 @@
 import Foundation
 
 struct Critic {
-//    var id: Int
     var name: String
     var status: String
     var bio: String

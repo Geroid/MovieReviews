@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
+
+    let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - Properties
     
@@ -33,6 +36,7 @@ class ViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         loadReviews(offset: currentOffset)
+        searchController.searchBar.delegate = self
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self,
                                             action: #selector(didPullToRefresh),
@@ -51,7 +55,6 @@ class ViewController: UIViewController {
     }
 
     @objc private func didPullToRefresh() {
-        reviews.removeAll()
         loadReviews(offset: currentOffset)
     }
 
@@ -78,6 +81,25 @@ class ViewController: UIViewController {
     func changeController() {
 //        var vc: UIViewController?
     }
+
+    func loadSearchResults(query: String) {
+        reviews.removeAll()
+        service.searchReviews(query: query) {[weak self] result in
+            guard let self = self else { return }
+            print(self.reviews)
+            switch result {
+            case .success(let reviews):
+                for i in reviews {
+                    self.reviews.append(i)
+                }
+                    self.tableView.reloadData()
+
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+
+        }
+    }
     
 }
 
@@ -98,12 +120,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
         let review = reviews[indexPath.row]
         cell.configure(with: review)
+        
 
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180.0
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -111,6 +130,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             currentOffset += 20
             loadReviews(offset: currentOffset)
         }
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        loadSearchResults(query: searchText)
     }
 }
 

@@ -23,7 +23,6 @@ class CriticsListViewController: UIViewController {
         super.viewDidLoad()
         let cellNib = UINib(nibName: cellReuseIdentifier, bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: cellReuseIdentifier)
-        // Do any additional setup after loading the view.
         loadCritics()
     }
 
