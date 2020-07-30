@@ -30,7 +30,7 @@ class MovieService {
 
 
     func getCritics(completion: ((Result<[Critic], Error>) -> Void)?) {
-        let request = getRequest(endpoint: "critics/all.json")!
+        let request = getRequest(endpoint: "critics/search.json")!
         session.dataTask(with: request) { [mapper] data, response, error in
             if let currentError = error {
                 completion?(.failure(currentError))
@@ -50,8 +50,8 @@ class MovieService {
         }.resume()
     }
 
-    func getReviews(completion: ((Result<[Review], Error>) -> Void)?) {
-        let request = getRequest(endpoint: "reviews/search.json")!
+    func getReviews(offset: Int, completion: ((Result<[Review], Error>) -> Void)?) {
+        let request = getRequest(endpoint: "reviews/search.json?", params: ["offset" : offset])!
 
         session.dataTask(with: request) { [mapper] data, response, error in
             if let currentError = error {

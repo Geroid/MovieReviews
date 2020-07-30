@@ -19,6 +19,7 @@ class ReviewTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        layer.masksToBounds = false
     }
     private var url: URL?
 
@@ -55,6 +56,31 @@ extension ReviewTableViewCell {
                 self?.imageView?.image = UIImage(data: data)
 
             }
+        }
+    }
+
+    func resizeImage(at url: URL, for size: CGSize) -> UIImage? {
+        guard let image = UIImage(contentsOfFile: url.path) else {
+            return nil
+        }
+
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { (context) in
+            image.draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
+
+    override open var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set (newFrame) {
+            var frame =  newFrame
+            frame.origin.y += 10
+            frame.origin.x += 10
+            frame.size.height -= 15
+            frame.size.width -= 2 * 10
+            super.frame = frame
         }
     }
 }
