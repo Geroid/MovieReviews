@@ -15,7 +15,6 @@ class CriticCollectionViewCell: UICollectionViewCell {
     
     private let cornerRadius: CGFloat = 5
     
-    private var url: URL?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +24,7 @@ class CriticCollectionViewCell: UICollectionViewCell {
 
 extension CriticCollectionViewCell {
     
-    func confure(with model: Critic) {
+    func configure(with model: Critic) {
         criticName.text = "\(model.name)"
         setImage(urlString: model.pictureURL)
     }
@@ -34,7 +33,6 @@ extension CriticCollectionViewCell {
         guard let imageURL = URL(string: urlString) else {
             return
         }
-        url = imageURL
         
         DispatchQueue.global(qos: .utility).async { [weak self] in
             guard let data = try? Data(contentsOf: imageURL) else {

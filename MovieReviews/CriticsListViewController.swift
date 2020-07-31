@@ -24,11 +24,20 @@ class CriticsListViewController: UIViewController {
         super.viewDidLoad()
         let cellNib = UINib(nibName: cellReuseIdentifier, bundle: nil)
         segmentedControl.selectedSegmentIndex = 1
+        collectionView.refreshControl = UIRefreshControl()
+        collectionView.refreshControl?.addTarget(self,
+                                                 action: #selector(didPullToRefresh),
+                                                 for: .valueChanged)
         collectionView.register(cellNib, forCellWithReuseIdentifier: cellReuseIdentifier)
         loadCritics()
     }
+
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        navigationController?.popViewController(animated: false)
+    }
     
     func loadCritics() {
+        critics.removeAll()
         service.getCritics { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -36,7 +45,10 @@ class CriticsListViewController: UIViewController {
                 for i in critics {
                     self.critics.append(i)
                 }
-                self.collectionView.reloadData()
+                DispatchQueue.main.async {
+                    self.collectionView.refreshControl?.endRefreshing()
+                    self.collectionView.reloadData()
+                }
                 
             case .failure(let error):
                 print(error.localizedDescription)
@@ -44,8 +56,8 @@ class CriticsListViewController: UIViewController {
         }
     }
     
-    @IBAction func indexChanged(_ sender: UISegmentedControl) {
-        navigationController?.popViewController(animated: false)
+    @objc private func didPullToRefresh() {
+        loadCritics()
     }
 }
 
@@ -67,7 +79,7 @@ extension CriticsListViewController: UICollectionViewDataSource {
         }
         
         let critic = critics[indexPath.row]
-        cell.confure(with: critic)
+        cell.configure(with: critic)
         
         return cell
     }
