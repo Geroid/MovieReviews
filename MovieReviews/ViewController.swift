@@ -23,19 +23,17 @@ class ViewController: UIViewController {
     
     private let cellReuseIdentifier = String(describing: ReviewTableViewCell.self)
     private let interitemSpasing: CGFloat = 10
-    private let criticsListViewController = CriticsListViewController()
     
     private var reviews: [Review] = []
     private var currentOffset =  0
     private var service = MovieService()
-    
-    lazy var criticsListController = self.storyboard?.instantiateViewController(withIdentifier: "CriticsListViewController")
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let cellNib = UINib(nibName: cellReuseIdentifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: cellReuseIdentifier)
+        segmentedControl.selectedSegmentIndex = 0
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         loadReviews(offset: currentOffset)
@@ -52,7 +50,8 @@ class ViewController: UIViewController {
             headerLabel.text = segmentedControl.titleForSegment(at: 0)
         case 1:
             headerLabel.text = segmentedControl.titleForSegment(at: 1)
-            
+            let controller = criticsListViewController()
+            navigationController?.pushViewController(controller, animated: false)
         default:
             break
         }
@@ -82,8 +81,13 @@ class ViewController: UIViewController {
         }
     }
     
-    func changeController() {
-        //        var vc: UIViewController?
+    private func criticsListViewController() -> CriticsListViewController {
+        let identifier = "CriticsListViewController"
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: identifier) as? CriticsListViewController else {
+            fatalError("Unable to instantiate ViewController with identifier: \(identifier)")
+        }
+        return controller
     }
     
     func loadSearchResults(query: String) {

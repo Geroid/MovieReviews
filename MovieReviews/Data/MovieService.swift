@@ -30,7 +30,7 @@ class MovieService {
     
     
     func getCritics(completion: ((Result<[Critic], Error>) -> Void)?) {
-        let request = getRequest(endpoint: "critics/search.json")!
+        let request = getRequest(endpoint: "critics/all.json")!
         session.dataTask(with: request) { [mapper] data, response, error in
             if let currentError = error {
                 completion?(.failure(currentError))

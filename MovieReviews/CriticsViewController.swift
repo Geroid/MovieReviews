@@ -14,7 +14,9 @@ class CriticsViewController: UIViewController {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var profileStatusLabel: UILabel!
     @IBOutlet weak var profileBioLabel: UILabel!
-    
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var criticsLabel: UILabel!
+
     var critic: Critic!
     var reviews: [Review] = []
     
@@ -23,10 +25,14 @@ class CriticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure(with: critic)
-        profilePhoto.image = nil
     }
-    
+
+    @IBAction func backButtonDidClicked(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+
     func configure(with model: Critic) {
+        criticsLabel.text = "\(model.name)"
         profileName.text = "\(model.name)"
         profileStatusLabel.text = "\(model.status)"
         if(model.bio == "") {
