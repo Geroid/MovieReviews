@@ -25,8 +25,7 @@ class ReviewTableViewCell: UITableViewCell {
         super.awakeFromNib()
         layer.masksToBounds = false
     }
-    
-    
+
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -61,7 +60,9 @@ extension ReviewTableViewCell {
             }
         }
     }
-    
+
+    // Need fix! Use Autolayout
+
     override open var frame: CGRect {
         get {
             return super.frame

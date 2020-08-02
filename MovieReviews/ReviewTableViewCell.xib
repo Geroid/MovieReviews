@@ -32,16 +32,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="I4x-hs-lcf">
-                                <rect key="frame" x="0.0" y="97.5" width="240" height="21"/>
+                                <rect key="frame" x="0.0" y="97.5" width="240" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="t3S-1Z-ntV">
-                                <rect key="frame" x="0.0" y="126.5" width="240" height="30"/>
+                                <rect key="frame" x="0.0" y="124.5" width="240" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="rNv-8q-8H9">
-                                        <rect key="frame" x="0.0" y="4.5" width="201.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="6.5" width="201.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -63,9 +63,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="t3S-1Z-ntV" firstAttribute="top" secondItem="I4x-hs-lcf" secondAttribute="bottom" constant="8" id="0pN-HY-yQJ"/>
                             <constraint firstItem="I4x-hs-lcf" firstAttribute="top" secondItem="BFz-Mj-pYt" secondAttribute="bottom" constant="7.5" id="9R1-v9-SRY"/>
-                            <constraint firstAttribute="bottom" secondItem="t3S-1Z-ntV" secondAttribute="bottom" constant="7.5" id="CzV-dw-kUH"/>
                             <constraint firstItem="I4x-hs-lcf" firstAttribute="leading" secondItem="Tm3-bV-taq" secondAttribute="leading" id="Fhb-ZZ-gZf"/>
                             <constraint firstItem="t3S-1Z-ntV" firstAttribute="leading" secondItem="Tm3-bV-taq" secondAttribute="leading" id="Xwl-tg-amY"/>
                             <constraint firstAttribute="trailing" secondItem="I4x-hs-lcf" secondAttribute="trailing" constant="8" id="lUM-uu-aM6"/>

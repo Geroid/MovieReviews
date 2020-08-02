@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9204647A24CBFBC30057EA82 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9204647924CBFBC30057EA82 /* MovieService.swift */; };
+		924F409B24D6EF3A000BECDE /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F409A24D6EF3A000BECDE /* ReviewTableViewController.swift */; };
 		92602DF824CFF22D00B1B2CA /* NavBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92602DF724CFF22D00B1B2CA /* NavBarView.xib */; };
 		9264B51524CB3B2B007A9948 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264B51424CB3B2B007A9948 /* AppDelegate.swift */; };
 		9264B51724CB3B2B007A9948 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264B51624CB3B2B007A9948 /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		9204647924CBFBC30057EA82 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		924F409A24D6EF3A000BECDE /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		92602DF724CFF22D00B1B2CA /* NavBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavBarView.xib; sourceTree = "<group>"; };
 		9264B51124CB3B2B007A9948 /* MovieReviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieReviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264B51424CB3B2B007A9948 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				9264B51624CB3B2B007A9948 /* SceneDelegate.swift */,
 				928B105C24CC4407008E61F9 /* Models.swift */,
 				9264B51824CB3B2B007A9948 /* ViewController.swift */,
+				924F409A24D6EF3A000BECDE /* ReviewTableViewController.swift */,
 				928B106124CC5AE1008E61F9 /* ReviewTableViewCell.xib */,
 				926666DD24CF5A86003A8BBA /* ReviewTableViewCell.swift */,
 				926666DB24CF3DC6003A8BBA /* CriticsListViewController.swift */,
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9264B51924CB3B2B007A9948 /* ViewController.swift in Sources */,
+				924F409B24D6EF3A000BECDE /* ReviewTableViewController.swift in Sources */,
 				92C3028A24CD9DDB0045EDDB /* CriticMapper.swift in Sources */,
 				926666DC24CF3DC6003A8BBA /* CriticsListViewController.swift in Sources */,
 				926666DA24CF3BE5003A8BBA /* CriticsViewController.swift in Sources */,

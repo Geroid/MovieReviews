@@ -15,7 +15,6 @@ class CriticsListViewController: UIViewController {
     private let cellReuseIdentifier = String(describing: CriticCollectionViewCell.self)
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
 
     var critics: [Critic] = []
     let service = MovieService()
@@ -23,17 +22,12 @@ class CriticsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let cellNib = UINib(nibName: cellReuseIdentifier, bundle: nil)
-        segmentedControl.selectedSegmentIndex = 1
         collectionView.refreshControl = UIRefreshControl()
         collectionView.refreshControl?.addTarget(self,
                                                  action: #selector(didPullToRefresh),
                                                  for: .valueChanged)
         collectionView.register(cellNib, forCellWithReuseIdentifier: cellReuseIdentifier)
         loadCritics()
-    }
-
-    @IBAction func indexChanged(_ sender: UISegmentedControl) {
-        navigationController?.popViewController(animated: false)
     }
     
     func loadCritics() {
