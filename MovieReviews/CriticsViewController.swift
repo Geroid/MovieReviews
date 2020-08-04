@@ -9,6 +9,8 @@
 import UIKit
 
 class CriticsViewController: UIViewController {
+
+    // MARK: - Outlets
     
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var profileName: UILabel!
@@ -17,15 +19,18 @@ class CriticsViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var criticsLabel: UILabel!
 
+    // MARK:- Properties
+
     var critic: Critic!
     var reviews: [Review] = []
-    
     private var url: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure(with: critic)
     }
+
+    // MARK: - Actions
 
     @IBAction func backButtonDidClicked(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
@@ -44,6 +49,8 @@ class CriticsViewController: UIViewController {
     }
     
 }
+
+    // MARK: - Extension
 
 extension CriticsViewController {
     

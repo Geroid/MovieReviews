@@ -9,18 +9,20 @@
 import UIKit
 
 class CriticCollectionViewCell: UICollectionViewCell {
-    
+
+    // MARK: - Outlets
+
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var criticName: UILabel!
-    
-    private let cornerRadius: CGFloat = 5
-    
-    
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
 }
+
+    //MARK: - Extension
 
 extension CriticCollectionViewCell {
     

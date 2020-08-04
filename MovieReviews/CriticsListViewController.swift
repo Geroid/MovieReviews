@@ -9,14 +9,17 @@
 import UIKit
 
 class CriticsListViewController: UIViewController {
+
+    // MARK: - Properties
     
     private let interitemSpacing: CGFloat = 10
     private let itemsPerRow: Int = 2
     private let cellReuseIdentifier = String(describing: CriticCollectionViewCell.self)
     let searchController = UISearchController(searchResultsController: nil)
 
-    @IBOutlet var collectionView: UICollectionView!
+    // MARK: - Outlets
 
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var searchBar: UISearchBar!
 
 

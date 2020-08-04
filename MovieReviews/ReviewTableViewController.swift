@@ -39,9 +39,9 @@ class ReviewTableViewController: UIViewController {
         reviewsTable.tableFooterView = UIView()
         reviewsTable.separatorStyle = .none
         reviewsTable.refreshControl = UIRefreshControl()
-               reviewsTable.refreshControl?.addTarget(self,
-                                                   action: #selector(didPullToRefresh),
-                                                   for: .valueChanged)
+        reviewsTable.refreshControl?.addTarget(self,
+                                               action: #selector(didPullToRefresh),
+                                               for: .valueChanged)
     }
     
     @objc private func didPullToRefresh() {
@@ -80,14 +80,11 @@ class ReviewTableViewController: UIViewController {
                     self.reviews.append(i)
                 }
                 self.reviewsTable.reloadData()
-                
             case .failure(let error):
                 print(error.localizedDescription)
             }
-            
         }
     }
-
 
 }
 

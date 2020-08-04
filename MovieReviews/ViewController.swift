@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         configureReviewTableViewController()
     }
 
-    // MARK: - IBActions
+    // MARK: - Actions
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
