@@ -110,7 +110,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtQ-tH-18C">
-                                        <rect key="frame" x="203" y="93.5" width="171" height="20.5"/>
+                                        <rect key="frame" x="324.5" y="93.5" width="49.5" height="20.5"/>
                                         <color key="backgroundColor" red="0.70588235294117641" green="0.88627450980392153" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -135,7 +135,7 @@
                                     <constraint firstItem="b6q-tS-eSv" firstAttribute="top" secondItem="iHU-Z7-3T2" secondAttribute="top" constant="25" id="YWQ-UL-C48"/>
                                     <constraint firstItem="qun-0c-ltK" firstAttribute="top" secondItem="l2K-ls-Ouh" secondAttribute="bottom" constant="10" id="Z5h-YD-Ofv"/>
                                     <constraint firstItem="qun-0c-ltK" firstAttribute="top" secondItem="DtQ-tH-18C" secondAttribute="bottom" constant="21" id="byi-gL-5Ah"/>
-                                    <constraint firstItem="DtQ-tH-18C" firstAttribute="leading" secondItem="l2K-ls-Ouh" secondAttribute="trailing" constant="76" id="dRU-sy-BzG"/>
+                                    <constraint firstItem="DtQ-tH-18C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l2K-ls-Ouh" secondAttribute="trailing" constant="8" symbolic="YES" id="dRU-sy-BzG"/>
                                     <constraint firstAttribute="trailing" secondItem="qun-0c-ltK" secondAttribute="trailing" constant="8" id="e48-hM-3ZP"/>
                                     <constraint firstAttribute="trailing" secondItem="l2K-ls-Ouh" secondAttribute="trailing" constant="287" id="jcy-6C-p3J"/>
                                     <constraint firstItem="DtQ-tH-18C" firstAttribute="top" secondItem="b6q-tS-eSv" secondAttribute="bottom" constant="48" id="tBS-C8-239"/>
@@ -155,14 +155,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4s-E1-cuz">
-                                        <rect key="frame" x="14" y="37" width="34" height="30"/>
+                                        <rect key="frame" x="14" y="37" width="163" height="30"/>
                                         <state key="normal" title="Back"/>
                                         <connections>
                                             <action selector="backButtonDidClicked:" destination="r48-nM-rff" eventType="touchUpInside" id="dYV-G9-1dY"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Critic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8z-i0-v2E">
-                                        <rect key="frame" x="56" y="42" width="350" height="21"/>
+                                        <rect key="frame" x="185" y="42" width="44.5" height="20"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -171,13 +171,12 @@
                                 <color key="backgroundColor" red="0.70588235294117641" green="0.88627450980392153" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="O8z-i0-v2E" firstAttribute="leading" secondItem="c4s-E1-cuz" secondAttribute="trailing" constant="8" id="0NG-kS-6k5"/>
-                                    <constraint firstAttribute="trailing" secondItem="O8z-i0-v2E" secondAttribute="trailing" constant="8" id="1Ut-7D-F0z"/>
-                                    <constraint firstItem="O8z-i0-v2E" firstAttribute="top" secondItem="32u-QL-LWl" secondAttribute="top" constant="42" id="9cZ-Sk-rI8"/>
-                                    <constraint firstItem="O8z-i0-v2E" firstAttribute="leading" secondItem="32u-QL-LWl" secondAttribute="leading" constant="56" id="Aui-WU-tYo"/>
+                                    <constraint firstItem="O8z-i0-v2E" firstAttribute="top" secondItem="32u-QL-LWl" secondAttribute="top" constant="42" id="UaE-fA-Q0E"/>
                                     <constraint firstAttribute="bottom" secondItem="c4s-E1-cuz" secondAttribute="bottom" constant="8" id="UaW-89-nqD"/>
                                     <constraint firstItem="c4s-E1-cuz" firstAttribute="leading" secondItem="32u-QL-LWl" secondAttribute="leading" constant="14" id="aUg-Rx-1FO"/>
+                                    <constraint firstItem="O8z-i0-v2E" firstAttribute="centerY" secondItem="c4s-E1-cuz" secondAttribute="centerY" id="eRq-7r-rn0"/>
+                                    <constraint firstItem="O8z-i0-v2E" firstAttribute="centerX" secondItem="32u-QL-LWl" secondAttribute="centerX" id="pFa-H7-bPJ"/>
                                     <constraint firstItem="c4s-E1-cuz" firstAttribute="top" secondItem="32u-QL-LWl" secondAttribute="top" constant="37" id="tkb-FM-4bI"/>
-                                    <constraint firstAttribute="bottom" secondItem="O8z-i0-v2E" secondAttribute="bottom" constant="12" id="xYT-lE-G4k"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -319,7 +318,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Sj9-jR-6Oh"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="f12-Kv-86i"/>
                     </view>
                     <size key="freeformSize" width="414" height="727"/>

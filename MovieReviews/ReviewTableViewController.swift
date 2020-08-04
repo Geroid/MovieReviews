@@ -73,7 +73,6 @@ class ReviewTableViewController: UIViewController {
         reviews.removeAll()
         service.searchReviews(query: query) {[weak self] result in
             guard let self = self else { return }
-            print(self.reviews)
             switch result {
             case .success(let reviews):
                 for i in reviews {
