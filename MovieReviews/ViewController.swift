@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    enum Segues {
-        static let toReviewTableView = "ToReviewTableView"
-        static let toCriticCollectionView = "ToCriticsCollectionView"
+    enum colors {
+        static let orange = UIColor(red: 0.97, green: 0.63, blue: 0.45, alpha: 1.00)
+        static let blue = UIColor(red: 0.71, green: 0.89, blue: 0.98, alpha: 1.00)
     }
     
     // MARK: - Outlets
@@ -20,56 +20,67 @@ class ViewController: UIViewController {
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var customNavbar: UIView!
+    @IBOutlet var contentView: UIView!
 
-    private let reviewTableVC = ReviewTableViewController()
-    private let criticsCollectionVC = CriticsListViewController()
+    private var reviewTableVC : UIViewController!
+    private var criticsCollectionVC : UIViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        segmentedControl.backgroundColor = UIColor(red: 0.97, green: 0.63, blue: 0.45, alpha: 1.00)
-        customNavbar.backgroundColor = UIColor(red: 0.97, green: 0.63, blue: 0.45, alpha: 1.00)
+        configureReviewTableViewController()
     }
-    
+
+    // MARK: - IBActions
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            headerLabel.text = segmentedControl.titleForSegment(at: 0)
-            segmentedControl.backgroundColor = UIColor(red: 0.97, green: 0.63, blue: 0.45, alpha: 1.00)
-            customNavbar.backgroundColor = UIColor(red: 0.97, green: 0.63, blue: 0.45, alpha: 1.00)
+            customizeNavBar(index: 0, color: colors.orange)
+            configureReviewTableViewController()
+            self.criticsCollectionVC.remove()
         case 1:
-            headerLabel.text = segmentedControl.titleForSegment(at: 1)
-            segmentedControl.backgroundColor = UIColor(red: 0.71, green: 0.89, blue: 0.98, alpha: 1.00)
-            customNavbar.backgroundColor = UIColor(red: 0.71, green: 0.89, blue: 0.98, alpha: 1.00)
-//            let controller = criticsListViewController()
-//            navigationController?.pushViewController(controller, animated: false)
+            customizeNavBar(index: 1, color: colors.blue)
+            configureCriticListViewController()
+            self.reviewTableVC.remove()
         default:
             break
         }
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segues.toReviewTableView {
-//            addChild(reviewTableVC)
-            addChild(reviewTableVC)
-        } else if segue.identifier == Segues.toCriticCollectionView {
-//            view.addSubview(criticsCollectionVC.view)
-        }
+    // MARK: - Configure Navbar and View Controllers
+
+    func customizeNavBar(index: Int, color: UIColor) {
+        headerLabel.text = segmentedControl.titleForSegment(at: index)
+        segmentedControl.backgroundColor = color
+        customNavbar.backgroundColor = color
     }
-    
-  
-    
-    private func criticsListViewController() -> CriticsListViewController {
-        let identifier = "CriticsListViewController"
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let controller = storyboard.instantiateViewController(withIdentifier: identifier) as? CriticsListViewController else {
-            fatalError("Unable to instantiate ViewController with identifier: \(identifier)")
-        }
-        return controller
+
+
+    func configureReviewTableViewController() {
+        let controller = storyboard?.instantiateViewController(identifier: "ReviewTableViewController")
+        reviewTableVC = controller!
+        addChild(reviewTableVC)
+        contentView.addSubview(reviewTableVC.view)
+        reviewTableVC.didMove(toParent: self)
     }
-    
-    
-    
+
+    func configureCriticListViewController() {
+        let controller = storyboard?.instantiateViewController(identifier: "CriticsListViewController")
+        criticsCollectionVC = controller!
+        addChild(criticsCollectionVC)
+        contentView.addSubview(criticsCollectionVC.view)
+        criticsCollectionVC.didMove(toParent: self)
+    }
+
+
 }
 
+extension UIViewController {
+    func remove() {
+        guard parent != nil else { return }
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
+    }
+}
 
 

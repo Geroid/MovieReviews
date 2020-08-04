@@ -11,8 +11,7 @@ import UIKit
 class ReviewTableViewController: UIViewController {
     
     // MARK: - Outlets
-    
-    @IBOutlet weak var tableView: UITableView!
+
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var reviewsTable: UITableView!
 
@@ -29,17 +28,20 @@ class ReviewTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTable()
+        loadReviews(offset: currentOffset)
+        searchController.searchBar.delegate = self
+    }
+
+    func configureTable() {
         let cellNib = UINib(nibName: cellReuseIdentifier, bundle: nil)
-        print(reviewsTable ?? "table not working")
         reviewsTable.register(cellNib, forCellReuseIdentifier: cellReuseIdentifier)
         reviewsTable.tableFooterView = UIView()
         reviewsTable.separatorStyle = .none
-        loadReviews(offset: currentOffset)
-        searchController.searchBar.delegate = self
         reviewsTable.refreshControl = UIRefreshControl()
-        reviewsTable.refreshControl?.addTarget(self,
-                                            action: #selector(didPullToRefresh),
-                                            for: .valueChanged)
+               reviewsTable.refreshControl?.addTarget(self,
+                                                   action: #selector(didPullToRefresh),
+                                                   for: .valueChanged)
     }
     
     @objc private func didPullToRefresh() {
@@ -85,6 +87,8 @@ class ReviewTableViewController: UIViewController {
             
         }
     }
+
+
 }
 
 extension ReviewTableViewController: UITableViewDataSource, UITableViewDelegate {
@@ -109,7 +113,7 @@ extension ReviewTableViewController: UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == reviews.count - 20 {
+        if indexPath.row == reviews.count - 1 {
             currentOffset += 20
             loadReviews(offset: currentOffset)
         }

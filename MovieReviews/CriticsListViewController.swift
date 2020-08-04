@@ -13,8 +13,12 @@ class CriticsListViewController: UIViewController {
     private let interitemSpacing: CGFloat = 10
     private let itemsPerRow: Int = 2
     private let cellReuseIdentifier = String(describing: CriticCollectionViewCell.self)
-    
-    @IBOutlet weak var collectionView: UICollectionView!
+    let searchController = UISearchController(searchResultsController: nil)
+
+    @IBOutlet var collectionView: UICollectionView!
+
+    @IBOutlet var searchBar: UISearchBar!
+
 
     var critics: [Critic] = []
     let service = MovieService()
@@ -31,7 +35,6 @@ class CriticsListViewController: UIViewController {
     }
     
     func loadCritics() {
-        critics.removeAll()
         service.getCritics { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -51,6 +54,7 @@ class CriticsListViewController: UIViewController {
     }
     
     @objc private func didPullToRefresh() {
+        critics.removeAll()
         loadCritics()
     }
 }
