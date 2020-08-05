@@ -36,8 +36,6 @@ class ReviewTableViewController: UIViewController {
     func configureTable() {
         let cellNib = UINib(nibName: cellReuseIdentifier, bundle: nil)
         reviewsTable.register(cellNib, forCellReuseIdentifier: cellReuseIdentifier)
-        reviewsTable.tableFooterView = UIView()
-        reviewsTable.separatorStyle = .none
         reviewsTable.refreshControl = UIRefreshControl()
         reviewsTable.refreshControl?.addTarget(self,
                                                action: #selector(didPullToRefresh),
