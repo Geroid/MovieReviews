@@ -20,10 +20,12 @@ class ReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var linkButton: UIButton!
     
     private var url: URL?
+    private let cornerRadius: CGFloat = 5
     
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.masksToBounds = false
+        reviewPhoto.layer.cornerRadius = cornerRadius
     }
 
     

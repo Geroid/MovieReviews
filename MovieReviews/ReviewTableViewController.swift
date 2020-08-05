@@ -17,14 +17,13 @@ class ReviewTableViewController: UIViewController {
 
     // MARK: - Properties
     
-    let searchController = UISearchController(searchResultsController: nil)
-    
     private let cellReuseIdentifier = String(describing: ReviewTableViewCell.self)
     private let interitemSpasing: CGFloat = 10
     
     private var reviews: [Review] = []
     private var currentOffset =  0
     private var service = MovieService()
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
