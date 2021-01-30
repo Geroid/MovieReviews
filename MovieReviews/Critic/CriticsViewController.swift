@@ -40,12 +40,12 @@ class CriticsViewController: UIViewController {
         criticsLabel.text = "\(model.name)"
         profileName.text = "\(model.name)"
         profileStatusLabel.text = "\(model.status)"
-        if(model.bio == "") {
+        if(model.bio == nil) {
             profileBioLabel.isHidden = true
         } else {
-            profileBioLabel.text = "\(model.bio)"
+            profileBioLabel.text = "\(String(describing: model.bio ?? ""))"
         }
-        setImage(urlString: model.pictureURL)
+        setImage(urlString: model.pictureURL!)
     }
     
 }

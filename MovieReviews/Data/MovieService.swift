@@ -6,7 +6,7 @@
 //  Copyright © 2020 Viktor Rezvantsev. All rights reserved.
 //
 
-import Foundation
+import Alamofire
 
 enum MovieServiceKeys {
     static let apiKeyParam = "api-key"
@@ -91,6 +91,29 @@ class MovieService {
             
             let reviews: [Review] = reviewListData.compactMap{ try? mapper.convertReview(from: $0)}
             completion?(.success((reviews)))
+        }.resume()
+    }
+
+    func searchCritics(reviewer: String, completion: ((Result<[Critic], Error>) -> Void)?) {
+        let request = getRequest(endpoint: "critics", params: ["reviewer" : reviewer])!
+        session.dataTask(with: request) {[mapper] data, response, error in
+            if let currentError = error {
+                completion?(.failure(currentError))
+                return
+            }
+
+            guard
+                let resultData = data,
+                let criticsJson = try? JSONSerialization.jsonObject(with: resultData, options: []) as? [String: Any],
+                let criticListData = criticsJson["results"] as? [[String:Any]]
+                else {
+                    completion?(.failure(APIError.resultParsingFailed))
+                    return
+            }
+
+            let critics: [Critic] = criticListData.compactMap{ try?
+                mapper.convertCritic(from: $0)}
+            completion?(.success(critics))
         }.resume()
     }
     

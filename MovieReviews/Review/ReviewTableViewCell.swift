@@ -40,8 +40,8 @@ class ReviewTableViewCell: UITableViewCell {
 extension ReviewTableViewCell {
     func configure(with review: Review) {
         titleLabel.text = "\(review.title)"
-        detailsLabel.text = "\(review.summaryShort)"
-        authorLabel.text = "\(review.byline)"
+        detailsLabel.text = "\(review.summaryShort ?? "")"
+        authorLabel.text = "\(review.byline ?? "")"
         dateLabel.text = "\(review.date)"
         setImage(urlString: review.pictureURL)
     }

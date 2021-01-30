@@ -68,6 +68,7 @@ class ReviewTableViewController: UIViewController {
     
     func loadSearchResults(query: String) {
         reviews.removeAll()
+        self.reviewsTable.reloadData()
         service.searchReviews(query: query) {[weak self] result in
             guard let self = self else { return }
             switch result {

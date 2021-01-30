@@ -9,11 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    enum colors {
-        static let orange = UIColor(red: 0.97, green: 0.63, blue: 0.45, alpha: 1.00)
-        static let blue = UIColor(red: 0.71, green: 0.89, blue: 0.98, alpha: 1.00)
-    }
     
     // MARK: - Outlets
 
@@ -28,22 +23,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureReviewTableViewController()
-    }
-
-    // MARK: - Actions
-    @IBAction func indexChanged(_ sender: UISegmentedControl) {
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            customizeNavBar(index: 0, color: colors.orange)
-            configureReviewTableViewController()
-            self.criticsCollectionVC.remove()
-        case 1:
-            customizeNavBar(index: 1, color: colors.blue)
-            configureCriticListViewController()
-            self.reviewTableVC.remove()
-        default:
-            break
-        }
     }
 
     // MARK: - Configure Navbar and View Controllers
@@ -71,6 +50,21 @@ class ViewController: UIViewController {
         criticsCollectionVC.didMove(toParent: self)
     }
 
+    // MARK: - Actions
+       @IBAction func indexChanged(_ sender: UISegmentedControl) {
+           switch segmentedControl.selectedSegmentIndex {
+           case 0:
+               customizeNavBar(index: 0, color: Colors.orange)
+               configureReviewTableViewController()
+               self.criticsCollectionVC.remove()
+           case 1:
+               customizeNavBar(index: 1, color: Colors.blue)
+               configureCriticListViewController()
+               self.reviewTableVC.remove()
+           default:
+               break
+           }
+       }
 
 }
 

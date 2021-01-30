@@ -15,6 +15,8 @@ class CriticCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var criticName: UILabel!
 
+    private var imageURL: URL?
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +30,10 @@ extension CriticCollectionViewCell {
     
     func configure(with model: Critic) {
         criticName.text = "\(model.name)"
-        setImage(urlString: model.pictureURL)
+        setImage(urlString: model.pictureURL ?? "")
+        if let url = model.pictureURL {
+            self.imageURL = URL(string: url)
+        }
     }
     
     private func setImage(urlString: String){
@@ -40,9 +45,10 @@ extension CriticCollectionViewCell {
             guard let data = try? Data(contentsOf: imageURL) else {
                 return
             }
-            DispatchQueue.main.async { [weak self] in
-                self?.profileImage?.image = UIImage(data: data)
-                
+            if self?.imageURL == imageURL {
+                DispatchQueue.main.async { [weak self] in
+                    self?.profileImage?.image = UIImage(data: data)
+                }
             }
         }
     }

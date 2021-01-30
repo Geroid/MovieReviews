@@ -109,28 +109,28 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtQ-tH-18C">
-                                        <rect key="frame" x="324.5" y="93.5" width="49.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtQ-tH-18C">
+                                        <rect key="frame" x="135" y="94" width="271" height="21"/>
                                         <color key="backgroundColor" red="0.70588235294117641" green="0.88627450980392153" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="qun-0c-ltK">
-                                        <rect key="frame" x="8" y="135" width="398" height="278"/>
+                                        <rect key="frame" x="8" y="135.5" width="398" height="277.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="l2K-ls-Ouh">
-                                        <rect key="frame" x="8" y="0.0" width="119" height="125"/>
+                                        <rect key="frame" x="8" y="0.0" width="119" height="125.5"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="qun-0c-ltK" secondAttribute="bottom" constant="5" id="2qL-HJ-rHq"/>
                                     <constraint firstItem="l2K-ls-Ouh" firstAttribute="top" secondItem="iHU-Z7-3T2" secondAttribute="top" id="Bw6-8U-bC0"/>
-                                    <constraint firstAttribute="trailing" secondItem="DtQ-tH-18C" secondAttribute="trailing" constant="40" id="PQq-2Z-XVL"/>
+                                    <constraint firstAttribute="trailing" secondItem="DtQ-tH-18C" secondAttribute="trailing" constant="8" id="PQq-2Z-XVL"/>
                                     <constraint firstItem="qun-0c-ltK" firstAttribute="leading" secondItem="iHU-Z7-3T2" secondAttribute="leading" constant="8" id="QDI-Go-yHr"/>
                                     <constraint firstItem="b6q-tS-eSv" firstAttribute="top" secondItem="iHU-Z7-3T2" secondAttribute="top" constant="25" id="YWQ-UL-C48"/>
                                     <constraint firstItem="qun-0c-ltK" firstAttribute="top" secondItem="l2K-ls-Ouh" secondAttribute="bottom" constant="10" id="Z5h-YD-Ofv"/>
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdx-H1-JA3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="92"/>
+            <point key="canvasLocation" x="1240.5797101449277" y="91.741071428571431"/>
         </scene>
         <!--Critics List View Controller-->
         <scene sceneID="b9W-Td-lMS">
