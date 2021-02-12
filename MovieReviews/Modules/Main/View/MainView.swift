@@ -10,15 +10,24 @@ import RxSwift
 import UIKit
 
 final class MainView: UIView {
+    
+    private var segmentedControl: UISegmentedControl?
+    private var customNavbar: UINavigationBar?
 
     // MARK: - Private properties
 
+    private var segmentItems = ["Reviews", "Critisc"]
+    
     private let disposeBag = DisposeBag()
 
     // MARK: - Initializers
 
     init() {
         super.init(frame: .zero)
+//        setNavbar()
+        setSegmentedControl()
+        
+        customizeNavBar(index: 0)
     }
 
     @available(*, unavailable)
@@ -31,4 +40,24 @@ final class MainView: UIView {
 //    func bind(to viewModel: MainViewModelBindable) {
 //        // Bindings UI controls to view model's input/output
 //    }
+    
+    private func setSegmentedControl() {
+        self.segmentedControl = UISegmentedControl(items: segmentItems)
+        segmentedControl?.frame = CGRect(x: 40, y: 50, width: 300, height: 30)
+        segmentedControl?.selectedSegmentIndex = 0
+        segmentedControl!.backgroundColor = Colors.blue
+        addSubview(segmentedControl!)
+    }
+    
+    private func setNavbar() {
+        self.customNavbar = UINavigationBar()
+        customNavbar?.backgroundColor = .white
+        addSubview(customNavbar!)
+    }
+    
+    private func customizeNavBar(index: Int) {
+//        headerLabel.text = segmentedControl.titleForSegment(at: index)
+        
+//        customNavbar!.backgroundColor = color
+    }
 }

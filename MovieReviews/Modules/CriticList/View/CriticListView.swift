@@ -45,7 +45,8 @@ final class CriticListView: UIView {
             .rx
             .modelSelected(Critic.self)
             .bind(onNext: { critic in
-                debugPrint(critic)
+                viewModel.showCritic(critic: critic)
+//                debugPrint(critic)
             }).disposed(by: disposeBag)
     }
     

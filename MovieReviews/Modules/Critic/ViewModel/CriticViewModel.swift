@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import RxCocoa
 import RxSwift
 
 /// Describes view model's input streams/single methods
-protocol CriticViewModelInput {}
+protocol CriticViewModelInput {
+}
 
 /// Describes view model's output streams needed to update UI
 protocol CriticViewModelOutput {}
@@ -18,7 +20,13 @@ protocol CriticViewModelOutput {}
 protocol CriticViewModelBindable: CriticViewModelInput & CriticViewModelOutput {}
 
 final class CriticViewModel {
+    
+    private var critic: Critic?
     private let disposeBag = DisposeBag()
+    
+    init(critic: Critic) {
+        self.critic = critic
+    }
 }
 
 // MARK: - CriticViewModelBindable implementation

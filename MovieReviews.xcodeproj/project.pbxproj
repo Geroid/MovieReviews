@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		033621FBB7BFABABBD80CD5F /* CriticCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9B8D968686E201D9B1A15B /* CriticCoordinatorAssembly.swift */; };
 		0735492F8FBA0EE5B9D1097B /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA8E35569FD2B1A6959565 /* BaseCoordinator.swift */; };
 		0CE73594258B57B7AF0192EB /* CriticListModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E03D9BA535B31809E2C1489 /* CriticListModuleAssembly.swift */; };
 		1174F9501C7D1DA364852F9B /* BaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6052CE318E90A71A6DF65476 /* BaseModule.swift */; };
 		12C0056F1E3F3494566BC7A8 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8098554891F036E3F2DAD68 /* MainModule.swift */; };
 		1905B2FC690A212285B9D61A /* CriticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC56D6FB59DBCEFA21FE046 /* CriticViewController.swift */; };
-		1C4351F175443BE086CE800E /* CriticModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BADDBD1832BCC70F1CCD88 /* CriticModuleAssembly.swift */; };
 		27193606A8848DCF02A5B511 /* CriticListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642DB7B31E9CFC9F2681A904 /* CriticListModule.swift */; };
 		29075FCFB30F7B8267F4C34A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE6A0A1407E23316B70CB1 /* MainView.swift */; };
-		3663227F56D63D6DDA30D9BA /* CriticCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B40FFFC71E7F965EE5DAF /* CriticCoordinator.swift */; };
 		3BC600B07A7580C649A6B3EA /* ReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD016139AE2FA63C52B0C4FD /* ReviewsViewModel.swift */; };
 		4CAADF78FB623978FA8B217C /* ReviewsModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281D076131D83361AE607FFF /* ReviewsModuleAssembly.swift */; };
 		542F96BD3C68BC4EC261B36F /* Pods_MovieReviews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A5A127A7AD4F1D6552203B /* Pods_MovieReviews.framework */; };
@@ -83,9 +80,6 @@
 		6EA4749C554E33061EBD4F35 /* ReviewsCoordinatorAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsCoordinatorAssembly.swift; sourceTree = "<group>"; };
 		6F04F34D04265B0E831768E7 /* ReviewsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
 		738286AC30F6B87BA20B058E /* Pods-MovieReviews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieReviews.release.xcconfig"; path = "Target Support Files/Pods-MovieReviews/Pods-MovieReviews.release.xcconfig"; sourceTree = "<group>"; };
-		75BADDBD1832BCC70F1CCD88 /* CriticModuleAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticModuleAssembly.swift; sourceTree = "<group>"; };
-		863B40FFFC71E7F965EE5DAF /* CriticCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticCoordinator.swift; sourceTree = "<group>"; };
-		8B9B8D968686E201D9B1A15B /* CriticCoordinatorAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticCoordinatorAssembly.swift; sourceTree = "<group>"; };
 		9204647924CBFBC30057EA82 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		921386E524FD5BCC000B3EC7 /* Critic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critic.swift; sourceTree = "<group>"; };
 		921386E724FD5BF3000B3EC7 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -160,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				6BEB3BDA748AAF32FC952012 /* CriticModule.swift */,
-				75BADDBD1832BCC70F1CCD88 /* CriticModuleAssembly.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -184,15 +177,6 @@
 				2A37C2CB53D6E12A47B2441E /* Coordinator */,
 			);
 			path = Reviews;
-			sourceTree = "<group>";
-		};
-		39AC254F8C77307ED552B295 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				863B40FFFC71E7F965EE5DAF /* CriticCoordinator.swift */,
-				8B9B8D968686E201D9B1A15B /* CriticCoordinatorAssembly.swift */,
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		3B378D6303C0B6234CC5DE67 /* Main */ = {
@@ -231,7 +215,6 @@
 				1E265A0B9EA2D0FB5709F43C /* Module */,
 				5303CECD905D8724069F0A3E /* View */,
 				D5C4AC218AA3A1583EEBD39A /* ViewModel */,
-				39AC254F8C77307ED552B295 /* Coordinator */,
 			);
 			path = Critic;
 			sourceTree = "<group>";
@@ -615,14 +598,11 @@
 				921386E624FD5BCC000B3EC7 /* Critic.swift in Sources */,
 				9264B51724CB3B2B007A9948 /* SceneDelegate.swift in Sources */,
 				7EE4B81EE0479BDD922C9DD4 /* CriticModule.swift in Sources */,
-				1C4351F175443BE086CE800E /* CriticModuleAssembly.swift in Sources */,
 				1905B2FC690A212285B9D61A /* CriticViewController.swift in Sources */,
 				B25DF9F825CD3ACB00B801CC /* ApplicationCoordinator.swift in Sources */,
 				8C66195F1AE5BE0F9ECF4A47 /* CriticView.swift in Sources */,
 				8538AE5D61487B0847F17946 /* CriticViewModel.swift in Sources */,
 				B2F0549625CD4F41003D597A /* MainViewModel.swift in Sources */,
-				3663227F56D63D6DDA30D9BA /* CriticCoordinator.swift in Sources */,
-				033621FBB7BFABABBD80CD5F /* CriticCoordinatorAssembly.swift in Sources */,
 				27193606A8848DCF02A5B511 /* CriticListModule.swift in Sources */,
 				0CE73594258B57B7AF0192EB /* CriticListModuleAssembly.swift in Sources */,
 				5D94304E7D482196390BAA8B /* CriticListViewController.swift in Sources */,

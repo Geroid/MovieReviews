@@ -21,6 +21,7 @@ final class CriticView: UIView {
 
     init() {
         super.init(frame: .zero)
+        backgroundColor = .darkGray
     }
 
     @available(*, unavailable)

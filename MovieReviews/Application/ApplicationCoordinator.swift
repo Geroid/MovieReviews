@@ -13,7 +13,7 @@ fileprivate enum ApplicationAssembly {
     
     static var assemlies: [Assembly] = {
         return [
-            CriticCoordinatorAssembly()
+            CriticListCoordinatorAssembly()
         ]
     }()
 }

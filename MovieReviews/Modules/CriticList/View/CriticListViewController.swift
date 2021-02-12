@@ -25,6 +25,7 @@ final class CriticListViewController: UIViewController {
     init(viewModel: CriticListViewModelBindable) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.title = "Critics"
     }
 
     @available(*, unavailable)

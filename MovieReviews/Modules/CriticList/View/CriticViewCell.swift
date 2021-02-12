@@ -28,7 +28,6 @@ final class CriticViewCell: UICollectionViewCell {
     private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-//        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
        return label
     }()
@@ -41,8 +40,6 @@ final class CriticViewCell: UICollectionViewCell {
     
     public convenience init(with model: Critic) {
       self.init(frame: .zero)
-        
-      configureCell(with: model)
     }
     
     required init?(coder: NSCoder) {
@@ -52,7 +49,7 @@ final class CriticViewCell: UICollectionViewCell {
     private func setupViews() {
       //add code here to add views to hierarchy
         backgroundColor = .white
-      addSubviews(imageView, textLabel)
+        addSubviews(imageView, textLabel)
     }
   
     

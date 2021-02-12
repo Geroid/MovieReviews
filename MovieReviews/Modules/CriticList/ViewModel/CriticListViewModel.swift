@@ -16,7 +16,9 @@ protocol CriticListViewModelInput {
     
     var reload: Binder<Void> { get }
     
-    var selectCritic: Binder<Void> { get }
+    func showCritic(critic: Critic)
+    
+//    var selectedCritic: PublishRelay<Critic> { get }
 }
 
 /// Describes view model's output streams needed to update UI
@@ -29,6 +31,7 @@ protocol CriticListViewModelBindable: CriticListViewModelInput & CriticListViewM
 final class CriticListViewModel {
     
     private let service: NYTimesAPI
+    private let coordinator: CriticListCoordinator?
     
     var criticsRelay = PublishRelay<[Critic]>()
     
@@ -40,6 +43,7 @@ final class CriticListViewModel {
     
     init(service: NYTimesAPI = NYTimesAPI()) {
         self.service = service
+        self.coordinator = CriticListCoordinator()
     }
 
 }
@@ -51,14 +55,13 @@ extension CriticListViewModel: CriticListViewModelBindable {
         return Binder(self.reloadRelay) { $0.accept($1) }
     }
     
-    var selectCritic: Binder<Void> {
-        return Binder(self.cellRelay) { $0.accept($1) }
-    }
-    
     var critics: PublishRelay<[Critic]> {
         return criticsRelay
     }
 
+    func showCritic(critic: Critic) {
+        coordinator?.showCriticScreen(critic: critic)
+    }
     
     func startup() {
         service.getCritics {
@@ -66,7 +69,6 @@ extension CriticListViewModel: CriticListViewModelBindable {
                 guard let self = self else { return }
                 switch result {
                 case .success(let critics):
-//                    debugPrint(critics)
                     self.criticsRelay.accept(critics)
                 case .failure(let error):
                     print(error.localizedDescription)

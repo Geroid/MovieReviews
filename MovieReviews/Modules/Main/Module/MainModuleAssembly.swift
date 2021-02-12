@@ -10,14 +10,9 @@ import Swinject
 
 final class MainModuleAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(NYTimesAPI.self) { resolver in
-            return NYTimesAPI()
-        }
         
         container.register(MainViewModel.self) { resolver in
-            let nyTimes = resolver.resolve(NYTimesAPI.self)!
-            
-            return MainViewModel(nyTimesAPI: nyTimes)
+            return MainViewModel()
         }
 
         container.register(MainModule.self) { resolver in
