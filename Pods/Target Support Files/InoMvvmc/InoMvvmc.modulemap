@@ -1,0 +1,6 @@
+framework module InoMvvmc {
+  umbrella header "InoMvvmc-umbrella.h"
+
+  export *
+  module * { export * }
+}

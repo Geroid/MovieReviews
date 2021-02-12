@@ -16,39 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var customNavbar: UIView!
     @IBOutlet var contentView: UIView!
+    
+    // MARK: - Properties
 
     private var reviewTableVC : UIViewController!
     private var criticsCollectionVC : UIViewController!
+    
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureReviewTableViewController()
     }
 
-    // MARK: - Configure Navbar and View Controllers
-
-    func customizeNavBar(index: Int, color: UIColor) {
-        headerLabel.text = segmentedControl.titleForSegment(at: index)
-        segmentedControl.backgroundColor = color
-        customNavbar.backgroundColor = color
-    }
-
-
-    func configureReviewTableViewController() {
-        let controller = storyboard?.instantiateViewController(identifier: "ReviewTableViewController")
-        reviewTableVC = controller!
-        addChild(reviewTableVC)
-        contentView.addSubview(reviewTableVC.view)
-        reviewTableVC.didMove(toParent: self)
-    }
-
-    func configureCriticListViewController() {
-        let controller = storyboard?.instantiateViewController(identifier: "CriticsListViewController")
-        criticsCollectionVC = controller!
-        addChild(criticsCollectionVC)
-        contentView.addSubview(criticsCollectionVC.view)
-        criticsCollectionVC.didMove(toParent: self)
-    }
 
     // MARK: - Actions
        @IBAction func indexChanged(_ sender: UISegmentedControl) {
@@ -65,6 +45,31 @@ class ViewController: UIViewController {
                break
            }
        }
+    
+    // MARK: - Configure Navbar and View Controllers
+
+    private func customizeNavBar(index: Int, color: UIColor) {
+        headerLabel.text = segmentedControl.titleForSegment(at: index)
+        segmentedControl.backgroundColor = color
+        customNavbar.backgroundColor = color
+    }
+
+
+    private func configureReviewTableViewController() {
+        let controller = storyboard?.instantiateViewController(identifier: "ReviewTableViewController")
+        reviewTableVC = controller!
+        addChild(reviewTableVC)
+        contentView.addSubview(reviewTableVC.view)
+        reviewTableVC.didMove(toParent: self)
+    }
+
+    private func configureCriticListViewController() {
+        let controller = storyboard?.instantiateViewController(identifier: "CriticsListViewController")
+        criticsCollectionVC = controller!
+        addChild(criticsCollectionVC)
+        contentView.addSubview(criticsCollectionVC.view)
+        criticsCollectionVC.didMove(toParent: self)
+    }
 
 }
 

@@ -1,5 +1,5 @@
 //
-//  MovieService.swift
+//  NYTimesAPI.swift
 //  MovieReviews
 //
 //  Created by Viktor Rezvantsev on 25.07.2020.
@@ -8,7 +8,7 @@
 
 import Alamofire
 
-enum MovieServiceKeys {
+enum NYTimesAPIKeys {
     static let apiKeyParam = "api-key"
     static let apiKey = "hb8QEYaG2fApIODvOISXAc1yBKyY1LZe"
     static let host = "https://api.nytimes.com/svc/movies/v2/"
@@ -19,7 +19,7 @@ enum APIError: Error {
     case dataCorrupted
 }
 
-class MovieService {
+class NYTimesAPI {
     
     var session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
     var mapper: CriticMapper
@@ -51,7 +51,7 @@ class MovieService {
     }
     
     func getReviews(offset: Int, completion: ((Result<[Review], Error>) -> Void)?) {
-        let request = getRequest(endpoint: "reviews/search.json?", params: ["offset" : offset])!
+        let request = getRequest(endpoint: "reviews/all.json", params: ["offset" : offset])!
         session.dataTask(with: request) { [mapper] data, response, error in
             if let currentError = error {
                 completion?(.failure(currentError))
@@ -130,12 +130,12 @@ class MovieService {
     }
     
     private func requestURL(for endpoint: String, params: [String:Any] = [:]) -> URL? {
-        guard var components = URLComponents(string: MovieServiceKeys.host) else {
+        guard var components = URLComponents(string: NYTimesAPIKeys.host) else {
             return nil
         }
         
         var requestParams = params
-        requestParams[MovieServiceKeys.apiKeyParam] = MovieServiceKeys.apiKey
+        requestParams[NYTimesAPIKeys.apiKeyParam] = NYTimesAPIKeys.apiKey
         
         components.path.append(endpoint)
         components.queryItems = requestParams.map { key, value in

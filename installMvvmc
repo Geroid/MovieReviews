@@ -1,0 +1,6 @@
+#!/bin/zsh
+if [ -d "./InoMvvmc" ]; then
+    cp -r ./InoMvvmc $HOME/InoMvvmc
+else
+	echo "Missed pod! Check out that InoMvvmc is located in the same folder where you run script."
+fi

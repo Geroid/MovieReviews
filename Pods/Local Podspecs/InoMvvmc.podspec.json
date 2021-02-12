@@ -1,0 +1,29 @@
+{
+  "name": "InoMvvmc",
+  "version": "0.1.0",
+  "summary": "Base classes for MVVM+C modules.",
+  "description": "This pod contains basic classes required to start working with MVVM+C architecture.",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Yaroslav Magin": "y.magin@inostudio.com"
+  },
+  "homepage": "https://inostudio.com",
+  "source": {
+    "git": ""
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source_files": "**/*.swift",
+  "dependencies": {
+    "RxSwift": [
+
+    ],
+    "Swinject": [
+
+    ]
+  }
+}

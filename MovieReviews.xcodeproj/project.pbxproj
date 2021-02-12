@@ -3,11 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033621FBB7BFABABBD80CD5F /* CriticCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9B8D968686E201D9B1A15B /* CriticCoordinatorAssembly.swift */; };
+		0735492F8FBA0EE5B9D1097B /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCA8E35569FD2B1A6959565 /* BaseCoordinator.swift */; };
+		0CE73594258B57B7AF0192EB /* CriticListModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E03D9BA535B31809E2C1489 /* CriticListModuleAssembly.swift */; };
+		1174F9501C7D1DA364852F9B /* BaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6052CE318E90A71A6DF65476 /* BaseModule.swift */; };
+		12C0056F1E3F3494566BC7A8 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8098554891F036E3F2DAD68 /* MainModule.swift */; };
+		1905B2FC690A212285B9D61A /* CriticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC56D6FB59DBCEFA21FE046 /* CriticViewController.swift */; };
+		1C4351F175443BE086CE800E /* CriticModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BADDBD1832BCC70F1CCD88 /* CriticModuleAssembly.swift */; };
+		27193606A8848DCF02A5B511 /* CriticListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642DB7B31E9CFC9F2681A904 /* CriticListModule.swift */; };
+		29075FCFB30F7B8267F4C34A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE6A0A1407E23316B70CB1 /* MainView.swift */; };
+		3663227F56D63D6DDA30D9BA /* CriticCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B40FFFC71E7F965EE5DAF /* CriticCoordinator.swift */; };
+		3BC600B07A7580C649A6B3EA /* ReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD016139AE2FA63C52B0C4FD /* ReviewsViewModel.swift */; };
+		4CAADF78FB623978FA8B217C /* ReviewsModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281D076131D83361AE607FFF /* ReviewsModuleAssembly.swift */; };
 		542F96BD3C68BC4EC261B36F /* Pods_MovieReviews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A5A127A7AD4F1D6552203B /* Pods_MovieReviews.framework */; };
+		56F8ED65F64D1000A93FE8EF /* MainModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFE740F2E13A04C78DC379D /* MainModuleAssembly.swift */; };
+		5D94304E7D482196390BAA8B /* CriticListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6DFC0E2D367B015F6CA4A0 /* CriticListViewController.swift */; };
+		7EE4B81EE0479BDD922C9DD4 /* CriticModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB3BDA748AAF32FC952012 /* CriticModule.swift */; };
+		7F09B497AF399B110F888202 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE37E00C02A6A3CEC2641FB /* MainViewController.swift */; };
+		8538AE5D61487B0847F17946 /* CriticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322710E8FF27B3924BE8A679 /* CriticViewModel.swift */; };
+		8C66195F1AE5BE0F9ECF4A47 /* CriticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192DFCFF649A9EF23B448B5B /* CriticView.swift */; };
+		8EBB7134FD336AA744480F6F /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F04F34D04265B0E831768E7 /* ReviewsView.swift */; };
+		900B4CE99BDA59DB66456BF1 /* CriticListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3967B60922FFC70883F2A5F /* CriticListView.swift */; };
 		9204647A24CBFBC30057EA82 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9204647924CBFBC30057EA82 /* MovieService.swift */; };
 		921386E624FD5BCC000B3EC7 /* Critic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921386E524FD5BCC000B3EC7 /* Critic.swift */; };
 		921386E824FD5BF3000B3EC7 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921386E724FD5BF3000B3EC7 /* Review.swift */; };
@@ -28,11 +48,44 @@
 		928B106424CC5DB7008E61F9 /* CriticCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928B106324CC5DB7008E61F9 /* CriticCollectionViewCell.xib */; };
 		92C3028A24CD9DDB0045EDDB /* CriticMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3028924CD9DDB0045EDDB /* CriticMapper.swift */; };
 		92C3028C24CE1EE80045EDDB /* ReviewMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3028B24CE1EE70045EDDB /* ReviewMapper.swift */; };
+		9499683D7F79811678DA9349 /* ReviewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA583D19B099D8BC4AC64ED2 /* ReviewsCoordinator.swift */; };
+		A1603A0CE5D464F310855A8F /* ReviewsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD7D982803078A2A9EB2B4 /* ReviewsModule.swift */; };
+		B254E6A825D19D5E004008B4 /* CriticViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254E6A725D19D5E004008B4 /* CriticViewCell.swift */; };
+		B254E6AB25D19F5B004008B4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254E6AA25D19F5B004008B4 /* UIView+Extensions.swift */; };
+		B25DF9F825CD3ACB00B801CC /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25DF9F725CD3ACB00B801CC /* ApplicationCoordinator.swift */; };
+		B273BD67333C00C34B945589 /* CriticListCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA351A74F655D00EB0B42E8 /* CriticListCoordinatorAssembly.swift */; };
+		B2F0549625CD4F41003D597A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0549525CD4F41003D597A /* MainViewModel.swift */; };
+		B8449349C25FEC7E3AD0A4ED /* MainCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF75E3885E5C299996EBF87 /* MainCoordinatorAssembly.swift */; };
+		D34E4E8F1853464D6B08A190 /* CriticListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB315492CDFBC6EF7C733B4D /* CriticListCoordinator.swift */; };
+		E24F602247CA966B23324AE2 /* ReviewsCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4749C554E33061EBD4F35 /* ReviewsCoordinatorAssembly.swift */; };
+		F573A5FD83CD5B446AF04BBA /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D8F8BE6CE216262E0631D8 /* ReviewsViewController.swift */; };
+		F98E4BD49847D0BF49A1622E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A893635FB4A68C33329DF /* MainCoordinator.swift */; };
+		FD7C53BAC838A7C85B3CA370 /* CriticListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128800685EFC2D3855D9DA5 /* CriticListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		192DFCFF649A9EF23B448B5B /* CriticView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticView.swift; sourceTree = "<group>"; };
+		1AE37E00C02A6A3CEC2641FB /* MainViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2128800685EFC2D3855D9DA5 /* CriticListViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticListViewModel.swift; sourceTree = "<group>"; };
+		281D076131D83361AE607FFF /* ReviewsModuleAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsModuleAssembly.swift; sourceTree = "<group>"; };
+		2D6DFC0E2D367B015F6CA4A0 /* CriticListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticListViewController.swift; sourceTree = "<group>"; };
+		2E03D9BA535B31809E2C1489 /* CriticListModuleAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticListModuleAssembly.swift; sourceTree = "<group>"; };
+		322710E8FF27B3924BE8A679 /* CriticViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticViewModel.swift; sourceTree = "<group>"; };
+		38FD7D982803078A2A9EB2B4 /* ReviewsModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsModule.swift; sourceTree = "<group>"; };
 		41A5A127A7AD4F1D6552203B /* Pods_MovieReviews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieReviews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		431A893635FB4A68C33329DF /* MainCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		4FCA8E35569FD2B1A6959565 /* BaseCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		5DA351A74F655D00EB0B42E8 /* CriticListCoordinatorAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticListCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		6052CE318E90A71A6DF65476 /* BaseModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseModule.swift; sourceTree = "<group>"; };
+		642DB7B31E9CFC9F2681A904 /* CriticListModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticListModule.swift; sourceTree = "<group>"; };
+		6BEB3BDA748AAF32FC952012 /* CriticModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticModule.swift; sourceTree = "<group>"; };
+		6DFE740F2E13A04C78DC379D /* MainModuleAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModuleAssembly.swift; sourceTree = "<group>"; };
+		6EA4749C554E33061EBD4F35 /* ReviewsCoordinatorAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		6F04F34D04265B0E831768E7 /* ReviewsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
 		738286AC30F6B87BA20B058E /* Pods-MovieReviews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieReviews.release.xcconfig"; path = "Target Support Files/Pods-MovieReviews/Pods-MovieReviews.release.xcconfig"; sourceTree = "<group>"; };
+		75BADDBD1832BCC70F1CCD88 /* CriticModuleAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticModuleAssembly.swift; sourceTree = "<group>"; };
+		863B40FFFC71E7F965EE5DAF /* CriticCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticCoordinator.swift; sourceTree = "<group>"; };
+		8B9B8D968686E201D9B1A15B /* CriticCoordinatorAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticCoordinatorAssembly.swift; sourceTree = "<group>"; };
 		9204647924CBFBC30057EA82 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		921386E524FD5BCC000B3EC7 /* Critic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critic.swift; sourceTree = "<group>"; };
 		921386E724FD5BF3000B3EC7 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -55,6 +108,19 @@
 		928B106324CC5DB7008E61F9 /* CriticCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CriticCollectionViewCell.xib; sourceTree = "<group>"; };
 		92C3028924CD9DDB0045EDDB /* CriticMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticMapper.swift; sourceTree = "<group>"; };
 		92C3028B24CE1EE70045EDDB /* ReviewMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMapper.swift; sourceTree = "<group>"; };
+		9BAE6A0A1407E23316B70CB1 /* MainView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		AB315492CDFBC6EF7C733B4D /* CriticListCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticListCoordinator.swift; sourceTree = "<group>"; };
+		AD016139AE2FA63C52B0C4FD /* ReviewsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsViewModel.swift; sourceTree = "<group>"; };
+		B254E6A725D19D5E004008B4 /* CriticViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticViewCell.swift; sourceTree = "<group>"; };
+		B254E6AA25D19F5B004008B4 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		B25DF9F725CD3ACB00B801CC /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		B2F0549525CD4F41003D597A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		B3D8F8BE6CE216262E0631D8 /* ReviewsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
+		CA583D19B099D8BC4AC64ED2 /* ReviewsCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsCoordinator.swift; sourceTree = "<group>"; };
+		CDF75E3885E5C299996EBF87 /* MainCoordinatorAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		D3967B60922FFC70883F2A5F /* CriticListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticListView.swift; sourceTree = "<group>"; };
+		EDC56D6FB59DBCEFA21FE046 /* CriticViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticViewController.swift; sourceTree = "<group>"; };
+		F8098554891F036E3F2DAD68 /* MainModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
 		FB1F75B73EF37864DB958B0B /* Pods-MovieReviews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieReviews.debug.xcconfig"; path = "Target Support Files/Pods-MovieReviews/Pods-MovieReviews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,14 +136,135 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AA71FFC4BC67673E2135270 /* CriticList */ = {
+			isa = PBXGroup;
+			children = (
+				126EC1C163878391153CB001 /* Module */,
+				9D557AE51FB7D9EC2DD0DE99 /* View */,
+				D669DFEBB54791A2E3A07A3D /* ViewModel */,
+				53C8E8D33D6482D281B45B8A /* Coordinator */,
+			);
+			path = CriticList;
+			sourceTree = "<group>";
+		};
+		126EC1C163878391153CB001 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				642DB7B31E9CFC9F2681A904 /* CriticListModule.swift */,
+				2E03D9BA535B31809E2C1489 /* CriticListModuleAssembly.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		1E265A0B9EA2D0FB5709F43C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				6BEB3BDA748AAF32FC952012 /* CriticModule.swift */,
+				75BADDBD1832BCC70F1CCD88 /* CriticModuleAssembly.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		2A37C2CB53D6E12A47B2441E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CA583D19B099D8BC4AC64ED2 /* ReviewsCoordinator.swift */,
+				6EA4749C554E33061EBD4F35 /* ReviewsCoordinatorAssembly.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2BFF82FE356FA381D41D5550 /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				B2F7BBB225CD268800E8D95D /* Model */,
+				E659E25D9B6CE0CC480123B9 /* Module */,
+				617FEDAAEE5551794B5DEAFD /* View */,
+				F4659696D151110D1C0F1D87 /* ViewModel */,
+				2A37C2CB53D6E12A47B2441E /* Coordinator */,
+			);
+			path = Reviews;
+			sourceTree = "<group>";
+		};
+		39AC254F8C77307ED552B295 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				863B40FFFC71E7F965EE5DAF /* CriticCoordinator.swift */,
+				8B9B8D968686E201D9B1A15B /* CriticCoordinatorAssembly.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3B378D6303C0B6234CC5DE67 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4005E499B17D9E8F101F4DF5 /* Module */,
+				D6BBC171C90E3A7747472B21 /* View */,
+				B2F0549425CD4F20003D597A /* ViewModel */,
+				B492AFEAC52D0F754EA2CADE /* Coordinator */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4005E499B17D9E8F101F4DF5 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				F8098554891F036E3F2DAD68 /* MainModule.swift */,
+				6DFE740F2E13A04C78DC379D /* MainModuleAssembly.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		427610193296A335FB9B4CAD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				FB1F75B73EF37864DB958B0B /* Pods-MovieReviews.debug.xcconfig */,
 				738286AC30F6B87BA20B058E /* Pods-MovieReviews.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		488FFBAFCF830A60E20E912F /* Critic */ = {
+			isa = PBXGroup;
+			children = (
+				B2F7BBB325CD26B400E8D95D /* Model */,
+				1E265A0B9EA2D0FB5709F43C /* Module */,
+				5303CECD905D8724069F0A3E /* View */,
+				D5C4AC218AA3A1583EEBD39A /* ViewModel */,
+				39AC254F8C77307ED552B295 /* Coordinator */,
+			);
+			path = Critic;
+			sourceTree = "<group>";
+		};
+		5303CECD905D8724069F0A3E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDC56D6FB59DBCEFA21FE046 /* CriticViewController.swift */,
+				926666D924CF3BE5003A8BBA /* CriticsViewController.swift */,
+				192DFCFF649A9EF23B448B5B /* CriticView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		53C8E8D33D6482D281B45B8A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AB315492CDFBC6EF7C733B4D /* CriticListCoordinator.swift */,
+				5DA351A74F655D00EB0B42E8 /* CriticListCoordinatorAssembly.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		617FEDAAEE5551794B5DEAFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				924F409A24D6EF3A000BECDE /* ReviewTableViewController.swift */,
+				B3D8F8BE6CE216262E0631D8 /* ReviewsViewController.swift */,
+				6F04F34D04265B0E831768E7 /* ReviewsView.swift */,
+				928B106124CC5AE1008E61F9 /* ReviewTableViewCell.xib */,
+				926666DD24CF5A86003A8BBA /* ReviewTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9204647824CBFBAB0057EA82 /* Data */ = {
@@ -88,64 +275,18 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		921143E524FE3083009FCD61 /* Critic */ = {
-			isa = PBXGroup;
-			children = (
-				92C3028924CD9DDB0045EDDB /* CriticMapper.swift */,
-				921386E524FD5BCC000B3EC7 /* Critic.swift */,
-			);
-			path = Critic;
-			sourceTree = "<group>";
-		};
-		921143E624FE309F009FCD61 /* Review */ = {
-			isa = PBXGroup;
-			children = (
-				92C3028B24CE1EE70045EDDB /* ReviewMapper.swift */,
-				921386E724FD5BF3000B3EC7 /* Review.swift */,
-			);
-			path = Review;
-			sourceTree = "<group>";
-		};
-		921386E324FD5B9D000B3EC7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				921143E524FE3083009FCD61 /* Critic */,
-				921143E624FE309F009FCD61 /* Review */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		921386E424FD5BAB000B3EC7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				B2F7BBB125CD21F100E8D95D /* Resources */,
 				9264B51D24CB3B2F007A9948 /* Assets.xcassets */,
 				9264B51F24CB3B2F007A9948 /* LaunchScreen.storyboard */,
 				9264B52224CB3B2F007A9948 /* Info.plist */,
 				9264B51424CB3B2B007A9948 /* AppDelegate.swift */,
 				9264B51624CB3B2B007A9948 /* SceneDelegate.swift */,
+				B25DF9F725CD3ACB00B801CC /* ApplicationCoordinator.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		921386EB24FD5FEA000B3EC7 /* Review */ = {
-			isa = PBXGroup;
-			children = (
-				924F409A24D6EF3A000BECDE /* ReviewTableViewController.swift */,
-				928B106124CC5AE1008E61F9 /* ReviewTableViewCell.xib */,
-				926666DD24CF5A86003A8BBA /* ReviewTableViewCell.swift */,
-			);
-			path = Review;
-			sourceTree = "<group>";
-		};
-		921386EC24FD6022000B3EC7 /* Critic */ = {
-			isa = PBXGroup;
-			children = (
-				926666DB24CF3DC6003A8BBA /* CriticsListViewController.swift */,
-				928B106324CC5DB7008E61F9 /* CriticCollectionViewCell.xib */,
-				926666DF24CF6C03003A8BBA /* CriticCollectionViewCell.swift */,
-				926666D924CF3BE5003A8BBA /* CriticsViewController.swift */,
-			);
-			path = Critic;
 			sourceTree = "<group>";
 		};
 		921386ED24FD6042000B3EC7 /* Main */ = {
@@ -164,6 +305,7 @@
 				9264B51224CB3B2B007A9948 /* Products */,
 				427610193296A335FB9B4CAD /* Pods */,
 				95088F311014CC9A508E679D /* Frameworks */,
+				F3419C5A7811B14D6EE9C8B0 /* main */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,12 +322,9 @@
 			children = (
 				921386E424FD5BAB000B3EC7 /* Application */,
 				9204647824CBFBAB0057EA82 /* Data */,
-				921386E324FD5B9D000B3EC7 /* Model */,
+				B25DF9FA25CD3B6500B801CC /* Modules */,
 				921386ED24FD6042000B3EC7 /* Main */,
-				921386EB24FD5FEA000B3EC7 /* Review */,
-				921386EC24FD6022000B3EC7 /* Critic */,
 				928B105E24CC5591008E61F9 /* Utils */,
-				921386E924FD5E32000B3EC7 /* Colors.swift */,
 			);
 			path = MovieReviews;
 			sourceTree = "<group>";
@@ -194,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				928B105F24CC55A1008E61F9 /* DateHelper.swift */,
+				B254E6AA25D19F5B004008B4 /* UIView+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -204,6 +344,140 @@
 				41A5A127A7AD4F1D6552203B /* Pods_MovieReviews.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D557AE51FB7D9EC2DD0DE99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B272739525D42AFE00840224 /* Old */,
+				D3967B60922FFC70883F2A5F /* CriticListView.swift */,
+				2D6DFC0E2D367B015F6CA4A0 /* CriticListViewController.swift */,
+				B254E6A725D19D5E004008B4 /* CriticViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B25DF9FA25CD3B6500B801CC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FCC26298D6BFD49EDEE6EEBA /* Base */,
+				488FFBAFCF830A60E20E912F /* Critic */,
+				0AA71FFC4BC67673E2135270 /* CriticList */,
+				3B378D6303C0B6234CC5DE67 /* Main */,
+				2BFF82FE356FA381D41D5550 /* Reviews */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B272739525D42AFE00840224 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				926666DB24CF3DC6003A8BBA /* CriticsListViewController.swift */,
+				928B106324CC5DB7008E61F9 /* CriticCollectionViewCell.xib */,
+				926666DF24CF6C03003A8BBA /* CriticCollectionViewCell.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		B2F0549425CD4F20003D597A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B2F0549525CD4F41003D597A /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B2F7BBB125CD21F100E8D95D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				921386E924FD5E32000B3EC7 /* Colors.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B2F7BBB225CD268800E8D95D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92C3028B24CE1EE70045EDDB /* ReviewMapper.swift */,
+				921386E724FD5BF3000B3EC7 /* Review.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2F7BBB325CD26B400E8D95D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92C3028924CD9DDB0045EDDB /* CriticMapper.swift */,
+				921386E524FD5BCC000B3EC7 /* Critic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B492AFEAC52D0F754EA2CADE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				431A893635FB4A68C33329DF /* MainCoordinator.swift */,
+				CDF75E3885E5C299996EBF87 /* MainCoordinatorAssembly.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D5C4AC218AA3A1583EEBD39A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				322710E8FF27B3924BE8A679 /* CriticViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D669DFEBB54791A2E3A07A3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2128800685EFC2D3855D9DA5 /* CriticListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D6BBC171C90E3A7747472B21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1AE37E00C02A6A3CEC2641FB /* MainViewController.swift */,
+				9BAE6A0A1407E23316B70CB1 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E659E25D9B6CE0CC480123B9 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				38FD7D982803078A2A9EB2B4 /* ReviewsModule.swift */,
+				281D076131D83361AE607FFF /* ReviewsModuleAssembly.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		F3419C5A7811B14D6EE9C8B0 /* main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		F4659696D151110D1C0F1D87 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD016139AE2FA63C52B0C4FD /* ReviewsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FCC26298D6BFD49EDEE6EEBA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6052CE318E90A71A6DF65476 /* BaseModule.swift */,
+				4FCA8E35569FD2B1A6959565 /* BaseCoordinator.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,15 +603,48 @@
 				92C3028A24CD9DDB0045EDDB /* CriticMapper.swift in Sources */,
 				926666DC24CF3DC6003A8BBA /* CriticsListViewController.swift in Sources */,
 				926666DA24CF3BE5003A8BBA /* CriticsViewController.swift in Sources */,
+				B254E6AB25D19F5B004008B4 /* UIView+Extensions.swift in Sources */,
 				921386E824FD5BF3000B3EC7 /* Review.swift in Sources */,
 				9264B51524CB3B2B007A9948 /* AppDelegate.swift in Sources */,
 				9204647A24CBFBC30057EA82 /* MovieService.swift in Sources */,
+				B254E6A825D19D5E004008B4 /* CriticViewCell.swift in Sources */,
 				926666E024CF6C03003A8BBA /* CriticCollectionViewCell.swift in Sources */,
 				926666DE24CF5A86003A8BBA /* ReviewTableViewCell.swift in Sources */,
 				92C3028C24CE1EE80045EDDB /* ReviewMapper.swift in Sources */,
 				928B106024CC55A1008E61F9 /* DateHelper.swift in Sources */,
 				921386E624FD5BCC000B3EC7 /* Critic.swift in Sources */,
 				9264B51724CB3B2B007A9948 /* SceneDelegate.swift in Sources */,
+				7EE4B81EE0479BDD922C9DD4 /* CriticModule.swift in Sources */,
+				1C4351F175443BE086CE800E /* CriticModuleAssembly.swift in Sources */,
+				1905B2FC690A212285B9D61A /* CriticViewController.swift in Sources */,
+				B25DF9F825CD3ACB00B801CC /* ApplicationCoordinator.swift in Sources */,
+				8C66195F1AE5BE0F9ECF4A47 /* CriticView.swift in Sources */,
+				8538AE5D61487B0847F17946 /* CriticViewModel.swift in Sources */,
+				B2F0549625CD4F41003D597A /* MainViewModel.swift in Sources */,
+				3663227F56D63D6DDA30D9BA /* CriticCoordinator.swift in Sources */,
+				033621FBB7BFABABBD80CD5F /* CriticCoordinatorAssembly.swift in Sources */,
+				27193606A8848DCF02A5B511 /* CriticListModule.swift in Sources */,
+				0CE73594258B57B7AF0192EB /* CriticListModuleAssembly.swift in Sources */,
+				5D94304E7D482196390BAA8B /* CriticListViewController.swift in Sources */,
+				900B4CE99BDA59DB66456BF1 /* CriticListView.swift in Sources */,
+				FD7C53BAC838A7C85B3CA370 /* CriticListViewModel.swift in Sources */,
+				D34E4E8F1853464D6B08A190 /* CriticListCoordinator.swift in Sources */,
+				B273BD67333C00C34B945589 /* CriticListCoordinatorAssembly.swift in Sources */,
+				A1603A0CE5D464F310855A8F /* ReviewsModule.swift in Sources */,
+				4CAADF78FB623978FA8B217C /* ReviewsModuleAssembly.swift in Sources */,
+				F573A5FD83CD5B446AF04BBA /* ReviewsViewController.swift in Sources */,
+				8EBB7134FD336AA744480F6F /* ReviewsView.swift in Sources */,
+				3BC600B07A7580C649A6B3EA /* ReviewsViewModel.swift in Sources */,
+				9499683D7F79811678DA9349 /* ReviewsCoordinator.swift in Sources */,
+				E24F602247CA966B23324AE2 /* ReviewsCoordinatorAssembly.swift in Sources */,
+				1174F9501C7D1DA364852F9B /* BaseModule.swift in Sources */,
+				0735492F8FBA0EE5B9D1097B /* BaseCoordinator.swift in Sources */,
+				12C0056F1E3F3494566BC7A8 /* MainModule.swift in Sources */,
+				56F8ED65F64D1000A93FE8EF /* MainModuleAssembly.swift in Sources */,
+				7F09B497AF399B110F888202 /* MainViewController.swift in Sources */,
+				29075FCFB30F7B8267F4C34A /* MainView.swift in Sources */,
+				F98E4BD49847D0BF49A1622E /* MainCoordinator.swift in Sources */,
+				B8449349C25FEC7E3AD0A4ED /* MainCoordinatorAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

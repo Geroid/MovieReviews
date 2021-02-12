@@ -9,4 +9,6 @@ target 'MovieReviews' do
   pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'InoMvvmc', :path => ENV['HOME'] + '/InoMvvmc'
+  pod 'Swinject'
 end
