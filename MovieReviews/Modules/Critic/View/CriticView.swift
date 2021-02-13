@@ -22,7 +22,7 @@ final class CriticView: UIView {
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "photo")
         imageView.layer.cornerRadius = 5
-        imageView.frame = CGRect(x: 0, y: 0, width: 120, height: 140)
+        imageView.frame = CGRect(x: 0, y: 0, width: 140, height: 180)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -54,6 +54,11 @@ final class CriticView: UIView {
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
+        nameLabel.text = "Critic view controller"
+        nameLabel.textColor = .black
+        addSubview(imageView)
+        addSubview(nameLabel)
+        setConstraints()
     }
 
     @available(*, unavailable)
@@ -65,6 +70,19 @@ final class CriticView: UIView {
 
     func bind(to viewModel: CriticViewModelBindable) {
         // Bindings UI controls to view model's input/output
+    }
+    
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 150),
+            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -160)
+        ])
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: self.imageView.topAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: self.imageView.leadingAnchor, constant: 50),
+            nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)
+        ])
     }
     
 }
