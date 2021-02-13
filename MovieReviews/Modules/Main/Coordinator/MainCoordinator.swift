@@ -24,8 +24,8 @@ final class MainCoordinator: BaseCoordinator<Void> {
 		// Implement actual start from window/nav controller/tab bar controller here
         if let window = UIApplication.shared.keyWindow {
             let mainController = MainViewController()
-            let criticListVC = CriticListViewController(viewModel: viewModel)
             
+            let criticListVC = CriticListViewController(viewModel: viewModel)
             window.rootViewController = criticListVC
         }
 	}

@@ -18,6 +18,7 @@ protocol CriticListViewModelInput {
     
     func showCritic(critic: Critic)
     
+    
 //    var selectedCritic: PublishRelay<Critic> { get }
 }
 
@@ -60,6 +61,7 @@ extension CriticListViewModel: CriticListViewModelBindable {
     }
 
     func showCritic(critic: Critic) {
+        coordinator?.start()
         coordinator?.showCriticScreen(critic: critic)
     }
     

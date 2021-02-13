@@ -27,7 +27,6 @@ final class CriticListCoordinator: BaseCoordinator<Void> {
 //            let viewModel = CriticListViewModel()
 //            let criticListVC = CriticListViewController(viewModel: viewModel)
             navigationController = UINavigationController(nibName: nil, bundle: nil)
-        
             window.rootViewController = navigationController
         }
 	}
