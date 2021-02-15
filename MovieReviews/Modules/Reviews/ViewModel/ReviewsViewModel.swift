@@ -46,6 +46,7 @@ extension ReviewsViewModel: ReviewsViewModelBindable {
             switch result {
             case .success(let reviews):
                 self.reviewsRelay.accept(reviews)
+                debugPrint(reviews)
             case .failure(let error):
                 print(error.localizedDescription)
             }
