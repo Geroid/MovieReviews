@@ -11,12 +11,11 @@ import UIKit
 
 final class MainView: UIView {
     
-    private var segmentedControl: UISegmentedControl?
-    private var customNavbar: UINavigationBar?
+    public var segmentedControl: UISegmentedControl?
 
     // MARK: - Private properties
 
-    private var segmentItems = ["Reviews", "Critisc"]
+    private var segmentItems = ["Reviews", "Critics"]
     
     private let disposeBag = DisposeBag()
 
@@ -24,10 +23,9 @@ final class MainView: UIView {
 
     init() {
         super.init(frame: .zero)
-//        setNavbar()
+        backgroundColor = .secondarySystemBackground
         setSegmentedControl()
-        
-        customizeNavBar(index: 0)
+        customizeNavBar(index: 2)
     }
 
     @available(*, unavailable)
@@ -46,13 +44,6 @@ final class MainView: UIView {
         segmentedControl?.frame = CGRect(x: 40, y: 50, width: 300, height: 30)
         segmentedControl?.selectedSegmentIndex = 0
         segmentedControl!.backgroundColor = Colors.blue
-        addSubview(segmentedControl!)
-    }
-    
-    private func setNavbar() {
-        self.customNavbar = UINavigationBar()
-        customNavbar?.backgroundColor = .white
-        addSubview(customNavbar!)
     }
     
     private func customizeNavBar(index: Int) {

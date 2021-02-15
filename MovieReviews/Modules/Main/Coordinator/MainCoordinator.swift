@@ -12,11 +12,14 @@ import UIKit
 
 final class MainCoordinator: BaseCoordinator<Void> {
 	// Replace <Void> with some other result type if necessary
-    let viewModel = CriticListViewModel()
+    let criticListViewModel = CriticListViewModel()
+    let reviewsViewModel = ReviewsViewModel()
     
 	override func assemblies() -> [Assembly] {
 		return [
-			MainModuleAssembly()
+			MainModuleAssembly(),
+            ReviewsModuleAssembly(),
+            CriticListModuleAssembly()
 		]
 	}
 
@@ -24,9 +27,13 @@ final class MainCoordinator: BaseCoordinator<Void> {
 		// Implement actual start from window/nav controller/tab bar controller here
         if let window = UIApplication.shared.keyWindow {
             let mainController = MainViewController()
-            
-            let criticListVC = CriticListViewController(viewModel: viewModel)
-            window.rootViewController = criticListVC
+            let reviewsVC = ReviewsViewController(viewModel: reviewsViewModel)
+            let criticListVC = CriticListViewController(viewModel: criticListViewModel)
+            let navigationController = UINavigationController()
+            navigationController.setViewControllers([mainController,criticListVC, reviewsVC], animated: true)
+//            mainController.addChild(criticListVC)
+//            mainController.view.addSubview(criticListVC.view)
+            window.rootViewController = navigationController
         }
 	}
 }

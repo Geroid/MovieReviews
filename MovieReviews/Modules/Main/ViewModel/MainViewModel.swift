@@ -13,6 +13,8 @@ import RxSwift
 protocol MainViewModelInput {
     func startup()
     var buttonTap: Binder<Int> { get }
+//    var criticVC: PublishRelay<CriticListViewController> { get }
+//    var reviewsVC: PublishRelay<ReviewsViewController> { get }
 }
 
 protocol MainViewModelOutput {
@@ -22,7 +24,7 @@ protocol MainViewModelBindable: MainViewModelInput & MainViewModelOutput {}
 
 class MainViewModel {
 
-    private let buttonRelay = BehaviorRelay<Int>(value: 0)
+    private let segmentedValueRelay = BehaviorRelay<Int>(value: 0)
     private let disposeBag = DisposeBag()
     
     init() {
@@ -36,6 +38,14 @@ extension MainViewModel: MainModuleOutput {}
 
 // MARK: - MainViewModelBindable implementation
 extension MainViewModel: MainViewModelBindable {
+//    var criticVC: PublishRelay<CriticListViewController> {
+//        return
+//    }
+//    
+//    var reviewsVC: PublishRelay<ReviewsViewController> {
+//        return
+//    }
+    
     
     // MARK: MainViewModelInput implementation
     func startup() {
@@ -43,7 +53,7 @@ extension MainViewModel: MainViewModelBindable {
     }
     
     var buttonTap: Binder<Int> {
-        return Binder(self.buttonRelay) { $0.accept($1) }
+        return Binder(self.segmentedValueRelay) { $0.accept($1) }
     }
     
     // MARK: MainViewModelOutput implementation

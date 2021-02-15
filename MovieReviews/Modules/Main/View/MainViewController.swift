@@ -34,7 +34,8 @@ final class MainViewController: UIViewController {
 
         let view = MainView()
 //        view.bind(to: viewModel)
-
+        navigationItem.titleView = view.segmentedControl!
+//        self.navigationController?.navigationBar.barTintColor = Colors.orange
         self.view = view
     }
 

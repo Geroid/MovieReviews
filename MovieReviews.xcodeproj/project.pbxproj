@@ -38,7 +38,7 @@
 		9264B52124CB3B2F007A9948 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9264B51F24CB3B2F007A9948 /* LaunchScreen.storyboard */; };
 		926666DA24CF3BE5003A8BBA /* CriticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926666D924CF3BE5003A8BBA /* CriticsViewController.swift */; };
 		926666DC24CF3DC6003A8BBA /* CriticsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926666DB24CF3DC6003A8BBA /* CriticsListViewController.swift */; };
-		926666DE24CF5A86003A8BBA /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926666DD24CF5A86003A8BBA /* ReviewTableViewCell.swift */; };
+		926666DE24CF5A86003A8BBA /* ReviewTableViewCell-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926666DD24CF5A86003A8BBA /* ReviewTableViewCell-1.swift */; };
 		926666E024CF6C03003A8BBA /* CriticCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926666DF24CF6C03003A8BBA /* CriticCollectionViewCell.swift */; };
 		928B106024CC55A1008E61F9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B105F24CC55A1008E61F9 /* DateHelper.swift */; };
 		928B106224CC5AE1008E61F9 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928B106124CC5AE1008E61F9 /* ReviewTableViewCell.xib */; };
@@ -47,6 +47,7 @@
 		92C3028C24CE1EE80045EDDB /* ReviewMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3028B24CE1EE70045EDDB /* ReviewMapper.swift */; };
 		9499683D7F79811678DA9349 /* ReviewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA583D19B099D8BC4AC64ED2 /* ReviewsCoordinator.swift */; };
 		A1603A0CE5D464F310855A8F /* ReviewsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD7D982803078A2A9EB2B4 /* ReviewsModule.swift */; };
+		B2445FE825DA57D900B822E8 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2445FE725DA57D900B822E8 /* ReviewTableViewCell.swift */; };
 		B254E6A825D19D5E004008B4 /* CriticViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254E6A725D19D5E004008B4 /* CriticViewCell.swift */; };
 		B254E6AB25D19F5B004008B4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254E6AA25D19F5B004008B4 /* UIView+Extensions.swift */; };
 		B25DF9F825CD3ACB00B801CC /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25DF9F725CD3ACB00B801CC /* ApplicationCoordinator.swift */; };
@@ -95,7 +96,7 @@
 		9264B52224CB3B2F007A9948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		926666D924CF3BE5003A8BBA /* CriticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticsViewController.swift; sourceTree = "<group>"; };
 		926666DB24CF3DC6003A8BBA /* CriticsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticsListViewController.swift; sourceTree = "<group>"; };
-		926666DD24CF5A86003A8BBA /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		926666DD24CF5A86003A8BBA /* ReviewTableViewCell-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewTableViewCell-1.swift"; sourceTree = "<group>"; };
 		926666DF24CF6C03003A8BBA /* CriticCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticCollectionViewCell.swift; sourceTree = "<group>"; };
 		928B105F24CC55A1008E61F9 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		928B106124CC5AE1008E61F9 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		9BAE6A0A1407E23316B70CB1 /* MainView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AB315492CDFBC6EF7C733B4D /* CriticListCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticListCoordinator.swift; sourceTree = "<group>"; };
 		AD016139AE2FA63C52B0C4FD /* ReviewsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsViewModel.swift; sourceTree = "<group>"; };
+		B2445FE725DA57D900B822E8 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		B254E6A725D19D5E004008B4 /* CriticViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticViewCell.swift; sourceTree = "<group>"; };
 		B254E6AA25D19F5B004008B4 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B25DF9F725CD3ACB00B801CC /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
@@ -241,11 +243,10 @@
 		617FEDAAEE5551794B5DEAFD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				924F409A24D6EF3A000BECDE /* ReviewTableViewController.swift */,
+				B2445FE625DA56DC00B822E8 /* Old */,
 				B3D8F8BE6CE216262E0631D8 /* ReviewsViewController.swift */,
 				6F04F34D04265B0E831768E7 /* ReviewsView.swift */,
-				928B106124CC5AE1008E61F9 /* ReviewTableViewCell.xib */,
-				926666DD24CF5A86003A8BBA /* ReviewTableViewCell.swift */,
+				B2445FE725DA57D900B822E8 /* ReviewTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -338,6 +339,16 @@
 				B254E6A725D19D5E004008B4 /* CriticViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B2445FE625DA56DC00B822E8 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				924F409A24D6EF3A000BECDE /* ReviewTableViewController.swift */,
+				928B106124CC5AE1008E61F9 /* ReviewTableViewCell.xib */,
+				926666DD24CF5A86003A8BBA /* ReviewTableViewCell-1.swift */,
+			);
+			path = Old;
 			sourceTree = "<group>";
 		};
 		B25DF9FA25CD3B6500B801CC /* Modules */ = {
@@ -582,6 +593,7 @@
 			files = (
 				9264B51924CB3B2B007A9948 /* ViewController.swift in Sources */,
 				921386EA24FD5E32000B3EC7 /* Colors.swift in Sources */,
+				B2445FE825DA57D900B822E8 /* ReviewTableViewCell.swift in Sources */,
 				924F409B24D6EF3A000BECDE /* ReviewTableViewController.swift in Sources */,
 				92C3028A24CD9DDB0045EDDB /* CriticMapper.swift in Sources */,
 				926666DC24CF3DC6003A8BBA /* CriticsListViewController.swift in Sources */,
@@ -592,7 +604,7 @@
 				9204647A24CBFBC30057EA82 /* MovieService.swift in Sources */,
 				B254E6A825D19D5E004008B4 /* CriticViewCell.swift in Sources */,
 				926666E024CF6C03003A8BBA /* CriticCollectionViewCell.swift in Sources */,
-				926666DE24CF5A86003A8BBA /* ReviewTableViewCell.swift in Sources */,
+				926666DE24CF5A86003A8BBA /* ReviewTableViewCell-1.swift in Sources */,
 				92C3028C24CE1EE80045EDDB /* ReviewMapper.swift in Sources */,
 				928B106024CC55A1008E61F9 /* DateHelper.swift in Sources */,
 				921386E624FD5BCC000B3EC7 /* Critic.swift in Sources */,

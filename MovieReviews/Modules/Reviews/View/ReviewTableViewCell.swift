@@ -2,64 +2,87 @@
 //  ReviewTableViewCell.swift
 //  MovieReviews
 //
-//  Created by Viktor Rezvantsev on 27.07.2020.
-//  Copyright © 2020 Viktor Rezvantsev. All rights reserved.
+//  Created by Victor Rezvantsev on 15.02.2021.
+//  Copyright © 2021 Viktor Rezvantsev. All rights reserved.
 //
 
 import UIKit
 
 class ReviewTableViewCell: UITableViewCell {
     
-    // MARK: - Outlets
-    
-    @IBOutlet weak var reviewPhoto: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var detailsLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var linkButton: UIButton!
-    
-    private var url: URL?
+    static let identifier = "reviewTableViewCell"
+
+    private let padding: CGFloat = 8
     private let cornerRadius: CGFloat = 5
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        layer.masksToBounds = false
-        reviewPhoto.layer.cornerRadius = cornerRadius
-    }
-
+    private lazy var reviewImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode  = .scaleToFill
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "photo")
+        imageView.layer.cornerRadius = cornerRadius
+        imageView.frame = CGRect(x: 0, y: 0, width: 130, height: 160)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
-}
-
-
-// MARK: - Configure
-
-extension ReviewTableViewCell {
-    func configure(with review: Review) {
-        titleLabel.text = "\(review.title)"
-        detailsLabel.text = "\(review.summaryShort ?? "")"
-        authorLabel.text = "\(review.byline ?? "")"
-        dateLabel.text = "\(review.date)"
-        setImage(urlString: review.pictureURL)
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var detailLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        return label
+    }()
+    
+    private lazy var authorLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        return label
+    }()
+    
+    private lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        return label
+    }()
+    
+    private lazy var linkButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupViews()
+        setupConstraints()
     }
     
+    required init?(coder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+    }
     
-    func setImage(urlString: String){
-        guard let imageURL = URL(string: urlString) else {
-            return
-        }
-        url = imageURL
-        
-        DispatchQueue.global(qos: .utility).async { [weak self] in
-            guard let data = try? Data(contentsOf: imageURL) else {
-                return
-            }
-            DispatchQueue.main.async { [weak self] in
-                self?.reviewPhoto?.image = UIImage(data: data)
-            }
-        }
+    private func setupViews() {
+      //add code here to add views to hierarchy
+        backgroundColor = .white
+        addSubviews(reviewImage,
+                    titleLabel,
+                    detailLabel,
+                    authorLabel,
+                    dateLabel,
+                    linkButton)
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            reviewImage.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
+            reviewImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            reviewImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: padding),
+            reviewImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: padding)
+        ])
     }
 }

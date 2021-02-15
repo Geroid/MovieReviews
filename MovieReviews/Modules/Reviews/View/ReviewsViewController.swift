@@ -19,6 +19,7 @@ final class ReviewsViewController: UIViewController {
     init(viewModel: ReviewsViewModelBindable) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.title = "Reviews"
     }
 
     @available(*, unavailable)
@@ -33,11 +34,13 @@ final class ReviewsViewController: UIViewController {
 
         let view = ReviewsView()
         view.bind(to: viewModel)
-
+        self.navigationController?.navigationBar.barTintColor = Colors.orange
         self.view = view
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+
 }

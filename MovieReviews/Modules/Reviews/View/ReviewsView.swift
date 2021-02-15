@@ -19,6 +19,8 @@ final class ReviewsView: UIView {
 
     init() {
         super.init(frame: .zero)
+        backgroundColor = .secondarySystemBackground
+        setupTableView()
     }
 
     @available(*, unavailable)
@@ -30,5 +32,12 @@ final class ReviewsView: UIView {
 
     func bind(to viewModel: ReviewsViewModelBindable) {
         // Bindings UI controls to view model's input/output
+    }
+    
+    private func setupTableView() {
+        
+        let tableView = UITableView.init(frame: .zero, style: .grouped)
+        tableView.register(ReviewTableViewCell.self, forCellReuseIdentifier: ReviewTableViewCell.identifier)
+        
     }
 }
