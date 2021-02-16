@@ -31,7 +31,6 @@ final class CriticListCoordinator: BaseCoordinator<Void> {
         if let window = UIApplication.shared.keyWindow {
             let viewModel = CriticListViewModel()
             let criticListVC = CriticListViewController(viewModel: viewModel)
-//            navigationController = UINavigationController(nibName: nil, bundle: nil)
             window.rootViewController = criticListVC
         }
 	}
@@ -39,6 +38,8 @@ final class CriticListCoordinator: BaseCoordinator<Void> {
     func showCriticScreen(critic: Critic) {
         let viewModel = CriticViewModel(critic: critic)
         let criticViewController = CriticViewController(viewModel: viewModel)
-        navigationController?.pushViewController(criticViewController, animated: true)
+        navigationController?.show(criticViewController, sender: self)
+//        navigationController?.pushViewController(criticViewController, animated: true)
+        debugPrint("Nav controller - \(navigationController)")
     }
 }

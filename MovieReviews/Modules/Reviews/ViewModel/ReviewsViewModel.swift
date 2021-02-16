@@ -42,7 +42,7 @@ extension ReviewsViewModel: ReviewsViewModelBindable {
     
 	// Describe all bindings here
     func startup() {
-        service.getReviews(offset: 15) { result in
+        service.getReviews(offset: 10) { result in
             switch result {
             case .success(let reviews):
                 self.reviewsRelay.accept(reviews)

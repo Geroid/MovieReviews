@@ -13,9 +13,7 @@ import UIKit
 final class MainCoordinator: BaseCoordinator<Void> {
 	// Replace <Void> with some other result type if necessary
     
-    let criticListViewModel = CriticListViewModel()
     private var navigationController: UINavigationController
-    
     
     private var childCoordinators = [BaseCoordinator<Void>]()
     
@@ -35,10 +33,14 @@ final class MainCoordinator: BaseCoordinator<Void> {
 	override func start() {
 		// Implement actual start from window/nav controller/tab bar controller here
         if let window = UIApplication.shared.keyWindow {
-            let mainController = MainViewController()
+            let mainViewModel = MainViewModel()
+            let mainController = MainViewController(viewModel: mainViewModel)
             navigationController.setViewControllers([mainController], animated: true)
+//            let criticListViewModel = CriticListViewModel()
+//            let criticListVC = CriticListViewController(viewModel: criticListViewModel)
             let reviewsViewModel = ReviewsViewModel()
             let reviewsVC = ReviewsViewController(viewModel: reviewsViewModel)
+//            let startIndex = mainViewModel.segmentedControlTap { }
             mainController.addChild(reviewsVC)
             mainController.view.addSubview(reviewsVC.view)
             reviewsVC.view.frame = mainController.view.bounds
@@ -48,10 +50,9 @@ final class MainCoordinator: BaseCoordinator<Void> {
 	}
     
     private func showReviews() {
-//        let reviewsViewModel = ReviewsViewModel()
-//        let reviewsVC = ReviewsViewController(viewModel: reviewsViewModel)
-//        let reviewsCoordinator = ReviewsVC
-//        childCoordinators.append()
+        let reviewsCoordinator = ReviewsCoordinator()
+        reviewsCoordinator.start()
+        childCoordinators.append(reviewsCoordinator)
     }
     
     private func showCritics() {

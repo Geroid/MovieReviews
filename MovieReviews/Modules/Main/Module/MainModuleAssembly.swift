@@ -17,7 +17,7 @@ final class MainModuleAssembly: Assembly {
 
         container.register(MainModule.self) { resolver in
             let viewModel = resolver.resolve(MainViewModel.self)!
-            let view = MainViewController()
+            let view = MainViewController(viewModel: viewModel)
             
             return MainModule(
                 view: view,

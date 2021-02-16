@@ -35,9 +35,9 @@ final class MainView: UIView {
 
     // MARK: - Public methods
 
-//    func bind(to viewModel: MainViewModelBindable) {
-//        // Bindings UI controls to view model's input/output
-//    }
+    func bind(to viewModel: MainViewModelBindable) {
+        // Bindings UI controls to view model's input/output
+    }
     
     private func setSegmentedControl() {
         self.segmentedControl = UISegmentedControl(items: segmentItems)
@@ -46,8 +46,15 @@ final class MainView: UIView {
         segmentedControl!.backgroundColor = Colors.blue
     }
     
-    @objc func changeIndex() {
-        
+    @objc func changeIndex(_ sender: UISegmentedControl) {
+        switch segmentedControl?.selectedSegmentIndex {
+        case 0:
+            customizeNavBar(index: 0)
+        case 1:
+            customizeNavBar(index: 1)
+        default:
+            break
+        }
     }
     
     private func customizeNavBar(index: Int) {

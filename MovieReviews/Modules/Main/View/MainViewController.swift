@@ -12,13 +12,12 @@ final class MainViewController: UIViewController {
 
     // MARK: - Private properties
 
-//    private let viewModel: MainViewModelBindable
+    private let viewModel: MainViewModelBindable
 
     // MARK: - Initializers
 
-    init() {
-//    init(viewModel: MainViewModelBindable) {
-//        self.viewModel = viewModel
+    init(viewModel: MainViewModelBindable) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -33,9 +32,9 @@ final class MainViewController: UIViewController {
         super.loadView()
 
         let view = MainView()
-//        view.bind(to: viewModel)
+        view.bind(to: viewModel)
         navigationItem.titleView = view.segmentedControl!
-//        self.navigationController?.navigationBar.barTintColor = Colors.orange
+        self.navigationController?.navigationBar.barTintColor = Colors.orange
         self.view = view
     }
 

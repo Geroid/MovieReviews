@@ -12,7 +12,7 @@ import RxSwift
 
 protocol MainViewModelInput {
     func startup()
-    var buttonTap: Binder<Int> { get }
+    var segmentedControlTap: Binder<Int> { get }
 }
 
 protocol MainViewModelOutput {
@@ -42,7 +42,7 @@ extension MainViewModel: MainViewModelBindable {
 
     }
     
-    var buttonTap: Binder<Int> {
+    var segmentedControlTap: Binder<Int> {
         return Binder(self.segmentedValueRelay) { $0.accept($1) }
     }
     
