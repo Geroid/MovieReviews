@@ -9,11 +9,11 @@
 import InoMvvmc
 import Swinject
 
-final class MainCoordinatorAssembly: Assembly {
-	func assemble(container: Container) {
-		container.register(MainCoordinator.self) { _ in
-			// replace '_' with 'resolver' and inject other coordinators if necessary
-			return MainCoordinator()
-		}
-	}
-}
+//final class MainCoordinatorAssembly: Assembly {
+//	func assemble(container: Container) {
+//		container.register(MainCoordinator.self) { _ in
+//			// replace '_' with 'resolver' and inject other coordinators if necessary
+//			return MainCoordinator()
+//		}
+//	}
+//}

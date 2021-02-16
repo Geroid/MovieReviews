@@ -33,6 +33,7 @@ final class CriticListViewModel {
     
     private let service: NYTimesAPI
     private let coordinator: CriticListCoordinator?
+    private let navigationController: UINavigationController = UINavigationController()
     
     var criticsRelay = PublishRelay<[Critic]>()
     
@@ -44,7 +45,7 @@ final class CriticListViewModel {
     
     init(service: NYTimesAPI = NYTimesAPI()) {
         self.service = service
-        self.coordinator = CriticListCoordinator()
+        self.coordinator = CriticListCoordinator(with: navigationController)
     }
 
 }

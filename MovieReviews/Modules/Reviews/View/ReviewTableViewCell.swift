@@ -18,9 +18,13 @@ class ReviewTableViewCell: UITableViewCell {
     private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.alignment = .fill
-        
-        stack.distribution  = .fillEqually
+        stack.alignment = .leading
+        stack.spacing = 5
+        stack.distribution = .fillProportionally
+        stack.addArrangedSubview(titleLabel)
+        stack.addArrangedSubview(detailLabel)
+        stack.addArrangedSubview(authorLabel)
+        stack.addArrangedSubview(dateLabel)
         return stack
     }()
     
@@ -45,7 +49,6 @@ class ReviewTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .light)
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -65,7 +68,6 @@ class ReviewTableViewCell: UITableViewCell {
     
     private lazy var linkButton: UIButton = {
         let button = UIButton()
-        
         return button
     }()
     
@@ -83,24 +85,18 @@ class ReviewTableViewCell: UITableViewCell {
       //add code here to add views to hierarchy
         backgroundColor = .white
         addSubviews(stackView, reviewImage)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.addSubview(titleLabel)
-        stackView.addSubview(detailLabel)
-        stackView.addSubview(authorLabel)
-        stackView.addSubview(dateLabel)
-
     }
     
     private func setupConstraints() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            reviewImage.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
-            reviewImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
-            reviewImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            reviewImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding),
+            reviewImage.topAnchor.constraint(equalTo: self.topAnchor, constant: padding + 8),
+            reviewImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding + 8),
+            reviewImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding - 8),
+            reviewImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding - 8),
             
             stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
             stackView.leftAnchor.constraint(equalTo: reviewImage.rightAnchor, constant: padding),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding),
             stackView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -padding)
         ])
     }

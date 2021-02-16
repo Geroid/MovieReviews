@@ -13,8 +13,6 @@ import RxSwift
 protocol MainViewModelInput {
     func startup()
     var buttonTap: Binder<Int> { get }
-//    var criticVC: PublishRelay<CriticListViewController> { get }
-//    var reviewsVC: PublishRelay<ReviewsViewController> { get }
 }
 
 protocol MainViewModelOutput {
@@ -38,14 +36,6 @@ extension MainViewModel: MainModuleOutput {}
 
 // MARK: - MainViewModelBindable implementation
 extension MainViewModel: MainViewModelBindable {
-//    var criticVC: PublishRelay<CriticListViewController> {
-//        return
-//    }
-//    
-//    var reviewsVC: PublishRelay<ReviewsViewController> {
-//        return
-//    }
-    
     
     // MARK: MainViewModelInput implementation
     func startup() {

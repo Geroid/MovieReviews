@@ -46,6 +46,10 @@ final class MainView: UIView {
         segmentedControl!.backgroundColor = Colors.blue
     }
     
+    @objc func changeIndex() {
+        
+    }
+    
     private func customizeNavBar(index: Int) {
 //        headerLabel.text = segmentedControl.titleForSegment(at: index)
         

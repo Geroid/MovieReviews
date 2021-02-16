@@ -13,17 +13,20 @@ fileprivate enum ApplicationAssembly {
     
     static var assemlies: [Assembly] = {
         return [
-            CriticListCoordinatorAssembly()
+//            CriticListCoordinatorAssembly()
         ]
     }()
 }
 
 class ApplicationCoordinator: BaseCoordinator<Void> {
     
+    private var navigationController: UINavigationController
+    
     override init() {
+        self.navigationController = UINavigationController()
         super.init()
-        
         assembler = Assembler(assemblies())
+        
     }
     
     override func assemblies() -> [Assembly] {
@@ -31,7 +34,7 @@ class ApplicationCoordinator: BaseCoordinator<Void> {
     }
     
     override func start() {
-        let coordinator = MainCoordinator()
+        let coordinator = MainCoordinator(with: navigationController)
         
         coordinate(to: coordinator)
     }

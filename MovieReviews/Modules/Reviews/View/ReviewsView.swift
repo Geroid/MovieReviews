@@ -36,7 +36,8 @@ final class ReviewsView: UIView {
 
     func bind(to viewModel: ReviewsViewModelBindable) {
         // Bindings UI controls to view model's input/output
-        viewModel.reviews.bind(to: tableView.rx.items) { tableView, index, element in
+        viewModel.reviews
+            .bind(to: tableView.rx.items) { tableView, index, element in
             let indexPath = IndexPath(item: index, section: 0)
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewTableViewCell.identifier, for: indexPath) as? ReviewTableViewCell else {
                 fatalError("Unable to dequeue cell with identifier \(ReviewTableViewCell.identifier)")
@@ -50,9 +51,7 @@ final class ReviewsView: UIView {
         
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.frame = frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0))
         tableView.register(ReviewTableViewCell.self, forCellReuseIdentifier: ReviewTableViewCell.identifier)
-        tableView.estimatedRowHeight = UITableView.automaticDimension
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),

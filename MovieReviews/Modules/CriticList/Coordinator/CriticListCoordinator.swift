@@ -12,14 +12,19 @@ import Swinject
 final class CriticListCoordinator: BaseCoordinator<Void> {
 	// Replace <Void> with some other result type if necessary
 
-//    private var navigationController: UINavigationController?
     private var critic: Critic?
+    private var navigationController: UINavigationController?
+    
     
 	override func assemblies() -> [Assembly] {
 		return [
 			CriticListModuleAssembly()
 		]
 	}
+    
+    init(with navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
 
 	override func start() {
 		// Implement actual start from window/nav controller/tab bar controller here
@@ -34,6 +39,6 @@ final class CriticListCoordinator: BaseCoordinator<Void> {
     func showCriticScreen(critic: Critic) {
         let viewModel = CriticViewModel(critic: critic)
         let criticViewController = CriticViewController(viewModel: viewModel)
-//        navigationController?.pushViewController(criticViewController, animated: true)
+        navigationController?.pushViewController(criticViewController, animated: true)
     }
 }

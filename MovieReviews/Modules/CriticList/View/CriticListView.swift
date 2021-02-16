@@ -74,7 +74,7 @@ final class CriticListView: UIView {
     
     private func setupCollectionConstraints() {
         NSLayoutConstraint.activate([
-            myCollectionView!.topAnchor.constraint(equalTo: topAnchor, constant: 90),
+            myCollectionView!.topAnchor.constraint(equalTo: topAnchor),
             myCollectionView!.bottomAnchor.constraint(equalTo: bottomAnchor),
             myCollectionView!.leftAnchor.constraint(equalTo: leftAnchor),
             myCollectionView!.rightAnchor.constraint(equalTo: rightAnchor)
