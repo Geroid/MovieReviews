@@ -17,6 +17,7 @@ class ReviewTableViewCell: UITableViewCell {
     
     let cellView: UIView = {
         let view = UIView()
+        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -40,7 +41,7 @@ class ReviewTableViewCell: UITableViewCell {
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "photo")
         imageView.layer.cornerRadius = cornerRadius
-        imageView.frame = CGRect(x: 0, y: 0, width: 120, height: 160)
+        imageView.frame = CGRect(x: 0, y: 0, width: 120, height: 150)
         return imageView
     }()
     
@@ -90,7 +91,7 @@ class ReviewTableViewCell: UITableViewCell {
     
     private func setupViews() {
       //add code here to add views to hierarchy
-        backgroundColor = .white
+        backgroundColor = .secondarySystemBackground
         self.selectionStyle = .none
         addSubview(cellView)
         cellView.addSubviews(stackView, reviewImage)
@@ -100,12 +101,13 @@ class ReviewTableViewCell: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
-            cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
-            cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
+            cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -padding),
+            cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: padding),
             cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
-            reviewImage.topAnchor.constraint(equalTo: cellView.topAnchor),
-            reviewImage.leadingAnchor.constraint(equalTo: cellView.leadingAnchor),
+            reviewImage.topAnchor.constraint(equalTo: cellView.topAnchor, constant: padding),
+            reviewImage.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: padding),
+            reviewImage.widthAnchor.constraint(equalToConstant: 120),
             reviewImage.trailingAnchor.constraint(equalTo: cellView.trailingAnchor),
             reviewImage.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -padding),
             

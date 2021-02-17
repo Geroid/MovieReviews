@@ -32,7 +32,9 @@ final class MainCoordinator: BaseCoordinator<Void> {
 
 	override func start() {
 		// Implement actual start from window/nav controller/tab bar controller here
-        if let window = UIApplication.shared.keyWindow {
+        let window = UIApplication.shared.windows.filter {
+            $0.isKeyWindow
+        }.first
             let mainViewModel = MainViewModel()
             let mainController = MainViewController(viewModel: mainViewModel)
             navigationController.setViewControllers([mainController], animated: true)
@@ -45,8 +47,7 @@ final class MainCoordinator: BaseCoordinator<Void> {
             mainController.view.addSubview(reviewsVC.view)
             reviewsVC.view.frame = mainController.view.bounds
             reviewsVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            window.rootViewController = navigationController
-        }
+            window?.rootViewController = navigationController
 	}
     
     private func showReviews() {

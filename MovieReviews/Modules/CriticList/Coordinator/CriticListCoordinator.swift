@@ -28,11 +28,13 @@ final class CriticListCoordinator: BaseCoordinator<Void> {
 
 	override func start() {
 		// Implement actual start from window/nav controller/tab bar controller here
-        if let window = UIApplication.shared.keyWindow {
-            let viewModel = CriticListViewModel()
-            let criticListVC = CriticListViewController(viewModel: viewModel)
-            window.rootViewController = criticListVC
-        }
+        
+        let window = UIApplication.shared.windows.filter {
+            $0.isKeyWindow
+        }.first
+        let viewModel = CriticListViewModel()
+        let criticListVC = CriticListViewController(viewModel: viewModel)
+        window?.rootViewController = criticListVC
 	}
     
     func showCriticScreen(critic: Critic) {
@@ -40,6 +42,6 @@ final class CriticListCoordinator: BaseCoordinator<Void> {
         let criticViewController = CriticViewController(viewModel: viewModel)
         navigationController?.show(criticViewController, sender: self)
 //        navigationController?.pushViewController(criticViewController, animated: true)
-        debugPrint("Nav controller - \(navigationController)")
+        debugPrint("Nav controller - \(String(describing: navigationController))")
     }
 }
