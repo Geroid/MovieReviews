@@ -15,7 +15,7 @@ final class MainCoordinator: BaseCoordinator<Void> {
     
     private var navigationController: UINavigationController
     
-    private var childCoordinators = [BaseCoordinator<Void>]()
+    private var childViewControllers = [UIViewController]()
     
     init(with navigationController: UINavigationController){
         self.navigationController = navigationController
@@ -38,27 +38,27 @@ final class MainCoordinator: BaseCoordinator<Void> {
             let mainViewModel = MainViewModel()
             let mainController = MainViewController(viewModel: mainViewModel)
             navigationController.setViewControllers([mainController], animated: true)
-//            let criticListViewModel = CriticListViewModel()
-//            let criticListVC = CriticListViewController(viewModel: criticListViewModel)
-            let reviewsViewModel = ReviewsViewModel()
-            let reviewsVC = ReviewsViewController(viewModel: reviewsViewModel)
+            
+        
 //            let startIndex = mainViewModel.segmentedControlTap { }
-            mainController.addChild(reviewsVC)
-            mainController.view.addSubview(reviewsVC.view)
-            reviewsVC.view.frame = mainController.view.bounds
-            reviewsVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//            mainController.addChild(reviewsVC)
+//            mainController.view.addSubview(reviewsVC.view)
+            
             window?.rootViewController = navigationController
 	}
     
     private func showReviews() {
-        let reviewsCoordinator = ReviewsCoordinator()
-        reviewsCoordinator.start()
-        childCoordinators.append(reviewsCoordinator)
+        let reviewsViewModel = ReviewsViewModel()
+        let reviewsVC = ReviewsViewController(viewModel: reviewsViewModel)
+        childViewControllers.append(reviewsVC)
+//        reviewsVC.view.frame = mainController.view.bounds
+//        reviewsVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        reviewsVC.didMove(toParent: mainController)
     }
     
     private func showCritics() {
-        let criticsCoordinator = CriticListCoordinator(with: navigationController)
-        criticsCoordinator.start()
-        childCoordinators.append(criticsCoordinator)
+        let criticListViewModel = CriticListViewModel()
+        let criticListVC = CriticListViewController(viewModel: criticListViewModel)
+        childViewControllers.append(criticListVC)
     }
 }

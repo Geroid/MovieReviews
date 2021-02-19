@@ -42,6 +42,6 @@ final class CriticListCoordinator: BaseCoordinator<Void> {
         let criticViewController = CriticViewController(viewModel: viewModel)
         navigationController?.show(criticViewController, sender: self)
 //        navigationController?.pushViewController(criticViewController, animated: true)
-        debugPrint("Nav controller - \(String(describing: navigationController))")
+//        debugPrint("Nav controller - \(String(describing: navigationController))")
     }
 }

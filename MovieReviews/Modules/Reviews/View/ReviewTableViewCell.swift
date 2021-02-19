@@ -27,7 +27,7 @@ class ReviewTableViewCell: UITableViewCell {
         stack.axis = .vertical
         stack.alignment = .leading
         stack.spacing = 5
-        stack.distribution = .fillProportionally
+        stack.distribution = .equalSpacing
         stack.addArrangedSubview(titleLabel)
         stack.addArrangedSubview(detailLabel)
         stack.addArrangedSubview(authorLabel)
@@ -108,12 +108,12 @@ class ReviewTableViewCell: UITableViewCell {
             reviewImage.topAnchor.constraint(equalTo: cellView.topAnchor, constant: padding),
             reviewImage.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: padding),
             reviewImage.widthAnchor.constraint(equalToConstant: 120),
-            reviewImage.trailingAnchor.constraint(equalTo: cellView.trailingAnchor),
             reviewImage.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -padding),
             
             stackView.topAnchor.constraint(equalTo: cellView.topAnchor, constant: padding),
-            stackView.leftAnchor.constraint(equalTo: reviewImage.rightAnchor, constant: padding),
+            stackView.leadingAnchor.constraint(equalTo: reviewImage.trailingAnchor, constant: padding),
             stackView.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -padding)
+            // bottom , trailing
         ])
     }
 }

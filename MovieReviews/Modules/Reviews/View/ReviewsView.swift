@@ -16,7 +16,6 @@ final class ReviewsView: UIView {
     private let padding: CGFloat = 8
     private let tableView: UITableView
     private let disposeBag = DisposeBag()
-    private var reviewsPublishRelay = PublishRelay<[Review]>()
 
     // MARK: - Initializers
 
@@ -35,17 +34,29 @@ final class ReviewsView: UIView {
     // MARK: - Public methods
 
     func bind(to viewModel: ReviewsViewModelBindable) {
-        // Bindings UI controls to view model's input/output
+//         Bindings UI controls to view model's input/output
         viewModel.reviews
-            .bind(to: tableView.rx.items) { tableView, index, element in
+            .bind(to: tableView.rx.items) { tableView, index, review in
             let indexPath = IndexPath(item: index, section: 0)
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewTableViewCell.identifier, for: indexPath) as? ReviewTableViewCell else {
                 fatalError("Unable to dequeue cell with identifier \(ReviewTableViewCell.identifier)")
             }
-            cell.configureCell(with: element)
+            cell.configureCell(with: review)
             return cell
         }.disposed(by: disposeBag)
     }
+    
+//    private func setupCellConfiguration() {
+//        let viewModel = ReviewsViewModel()
+//        viewModel.reviews
+//            .bind(to: tableView
+//                    .rx.items(cellIdentifier: ReviewTableViewCell.identifier, cellType: ReviewTableViewCell.self)) {
+//                row, review, cell in
+//                debugPrint(review)
+//                cell.configure(with: review)
+//            }
+//            .disposed(by: disposeBag)
+//    }
     
     private func setupTableView() {
         

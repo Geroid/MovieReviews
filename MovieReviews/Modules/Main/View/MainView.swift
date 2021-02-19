@@ -44,6 +44,7 @@ final class MainView: UIView {
         segmentedControl?.frame = CGRect(x: 40, y: 50, width: 300, height: 30)
         segmentedControl?.selectedSegmentIndex = 0
         segmentedControl!.backgroundColor = Colors.blue
+        segmentedControl?.addTarget(self, action: #selector(changeIndex(_:)), for: .valueChanged)
     }
     
     @objc func changeIndex(_ sender: UISegmentedControl) {
