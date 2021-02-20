@@ -14,7 +14,7 @@ class DateHelper {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.timeZone = TimeZone.ReferenceType.local
-        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        formatter.dateFormat = "yyyy/MM/dd   HH:mm:ss"
         return formatter
     }()
     

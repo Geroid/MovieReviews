@@ -35,20 +35,18 @@ final class MainCoordinator: BaseCoordinator<Void> {
         let window = UIApplication.shared.windows.filter {
             $0.isKeyWindow
         }.first
+        
         let mainViewModel = MainViewModel()
         let mainController = MainViewController(viewModel: mainViewModel)
+        navigationController.setViewControllers([mainController], animated: true)
+        
         let reviewsViewModel = ReviewsViewModel()
         let reviewsVC = ReviewsViewController(viewModel: reviewsViewModel)
         reviewsVC.view.frame = mainController.view.bounds
         reviewsVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        reviewsVC.didMove(toParent: mainController)
-        navigationController.setViewControllers([mainController], animated: true)
         mainController.addChild(reviewsVC)
         mainController.view.addSubview(reviewsVC.view)
-        
-        //            let startIndex = mainViewModel.segmentedControlTap { }
-        //            mainController.addChild(reviewsVC)
-        //            mainController.view.addSubview(reviewsVC.view)
+        reviewsVC.didMove(toParent: mainController)
         
         window?.rootViewController = navigationController
     }
