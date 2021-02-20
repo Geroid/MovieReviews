@@ -106,7 +106,9 @@ extension CriticViewCell {
                     self.imageView.image = UIImage(data: data)
                 }
             } else {
-                self.imageView.image = UIImage(named: "photo")
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(named: "photo")
+                }
             }
         }
         
