@@ -46,18 +46,6 @@ final class ReviewsView: UIView {
         }.disposed(by: disposeBag)
     }
     
-//    private func setupCellConfiguration() {
-//        let viewModel = ReviewsViewModel()
-//        viewModel.reviews
-//            .bind(to: tableView
-//                    .rx.items(cellIdentifier: ReviewTableViewCell.identifier, cellType: ReviewTableViewCell.self)) {
-//                row, review, cell in
-//                debugPrint(review)
-//                cell.configure(with: review)
-//            }
-//            .disposed(by: disposeBag)
-//    }
-    
     private func setupTableView() {
         
         addSubview(tableView)
@@ -68,7 +56,7 @@ final class ReviewsView: UIView {
             tableView.topAnchor.constraint(equalTo: self.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding)
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
 
     }

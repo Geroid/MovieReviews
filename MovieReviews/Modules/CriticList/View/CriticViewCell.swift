@@ -99,11 +99,16 @@ extension CriticViewCell {
     }
     
     private func setImage(pictureURL: String) {
-        if let url = URL(string: pictureURL) {
-            let data = try! Data(contentsOf: url)
-            self.imageView.image = UIImage(data: data)
-        } else {
-            self.imageView.image = UIImage(named: "photo")
+        DispatchQueue.global().async {
+            if let url = URL(string: pictureURL) {
+                let data = try! Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: data)
+                }
+            } else {
+                self.imageView.image = UIImage(named: "photo")
+            }
         }
+        
     }
 }

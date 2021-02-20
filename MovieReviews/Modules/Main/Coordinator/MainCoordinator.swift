@@ -30,30 +30,40 @@ final class MainCoordinator: BaseCoordinator<Void> {
 	}
     
 
-	override func start() {
-		// Implement actual start from window/nav controller/tab bar controller here
+    override func start() {
+        // Implement actual start from window/nav controller/tab bar controller here
         let window = UIApplication.shared.windows.filter {
             $0.isKeyWindow
         }.first
-            let mainViewModel = MainViewModel()
-            let mainController = MainViewController(viewModel: mainViewModel)
-            navigationController.setViewControllers([mainController], animated: true)
-            
+        let mainViewModel = MainViewModel()
+        let mainController = MainViewController(viewModel: mainViewModel)
+        let reviewsViewModel = ReviewsViewModel()
+        let reviewsVC = ReviewsViewController(viewModel: reviewsViewModel)
+        reviewsVC.view.frame = mainController.view.bounds
+        reviewsVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        reviewsVC.didMove(toParent: mainController)
+        navigationController.setViewControllers([mainController], animated: true)
+        mainController.addChild(reviewsVC)
+        mainController.view.addSubview(reviewsVC.view)
         
-//            let startIndex = mainViewModel.segmentedControlTap { }
-//            mainController.addChild(reviewsVC)
-//            mainController.view.addSubview(reviewsVC.view)
-            
-            window?.rootViewController = navigationController
-	}
+        //            let startIndex = mainViewModel.segmentedControlTap { }
+        //            mainController.addChild(reviewsVC)
+        //            mainController.view.addSubview(reviewsVC.view)
+        
+        window?.rootViewController = navigationController
+    }
+    
+    private func initializeViewControllers() {
+        
+    }
     
     private func showReviews() {
         let reviewsViewModel = ReviewsViewModel()
         let reviewsVC = ReviewsViewController(viewModel: reviewsViewModel)
         childViewControllers.append(reviewsVC)
-//        reviewsVC.view.frame = mainController.view.bounds
-//        reviewsVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        reviewsVC.didMove(toParent: mainController)
+        //        reviewsVC.view.frame = mainController.view.bounds
+        //        reviewsVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        //        reviewsVC.didMove(toParent: mainController)
     }
     
     private func showCritics() {

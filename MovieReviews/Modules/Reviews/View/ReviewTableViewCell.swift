@@ -41,7 +41,10 @@ class ReviewTableViewCell: UITableViewCell {
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "photo")
         imageView.layer.cornerRadius = cornerRadius
-        imageView.frame = CGRect(x: 0, y: 0, width: 120, height: 150)
+        imageView.frame.size.width = 120
+        imageView.frame.size.height = 150
+        imageView.clipsToBounds = true
+//        imageView.frame = CGRect(x: 0, y: 0, width: 120, height: 150)
         return imageView
     }()
     
@@ -101,8 +104,8 @@ class ReviewTableViewCell: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
-            cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -padding),
-            cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: padding),
+            cellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            cellView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
             reviewImage.topAnchor.constraint(equalTo: cellView.topAnchor, constant: padding),
@@ -112,7 +115,8 @@ class ReviewTableViewCell: UITableViewCell {
             
             stackView.topAnchor.constraint(equalTo: cellView.topAnchor, constant: padding),
             stackView.leadingAnchor.constraint(equalTo: reviewImage.trailingAnchor, constant: padding),
-            stackView.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -padding)
+            stackView.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -padding),
+            stackView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -padding)
             // bottom , trailing
         ])
     }
@@ -123,16 +127,18 @@ extension ReviewTableViewCell {
         titleLabel.text = "\(model.title)"
         detailLabel.text = "\(model.summaryShort ?? "")"
         authorLabel.text = "\(model.byline ?? "")"
-        dateLabel.text = "\(model.date)"
+        dateLabel.text = "\(DateHelper.dateFormatter.string(from: model.date))"
         setImage(pictureURL: model.pictureURL)
     }
     
     private func setImage(pictureURL: String) {
-        if let url = URL(string: pictureURL) {
-            let data = try! Data(contentsOf: url)
-            self.reviewImage.image = UIImage(data: data)
-        } else {
-            self.reviewImage.image = UIImage(named: "photo")
+        DispatchQueue.global().async {
+            if let url = URL(string: pictureURL) {
+                let data = try! Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    self.reviewImage.image = UIImage(data: data)
+                }
+            }
         }
     }
 }
