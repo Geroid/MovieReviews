@@ -15,10 +15,14 @@ final class MainCoordinator: BaseCoordinator<Void> {
     
     private var navigationController: UINavigationController
     
-    private var childViewControllers = [UIViewController]()
+    private var mainViewController: MainViewController?
+    private var reviewsViewController: ReviewsViewController?
     
-    init(with navigationController: UINavigationController){
-        self.navigationController = navigationController
+    public var childViewControllers = [UIViewController]()
+    
+    override init(){
+        self.navigationController = UINavigationController()
+        
     }
     
     override func assemblies() -> [Assembly] {
@@ -35,38 +39,30 @@ final class MainCoordinator: BaseCoordinator<Void> {
         let window = UIApplication.shared.windows.filter {
             $0.isKeyWindow
         }.first
+//        reviewsView.assemble(container: con)
+        let reviewsView = resolver.resolve(ReviewsModule.self)
+        childViewControllers.append(reviewsView!.view)
+        reviewsViewController = reviewsView!.view as! ReviewsViewController
+        
+        let criticListModule = resolver.resolve(CriticListModule.self)
+        childViewControllers.append(criticListModule!.view)
         
         let mainViewModel = MainViewModel()
-        let mainController = MainViewController(viewModel: mainViewModel)
-        navigationController.setViewControllers([mainController], animated: true)
+        mainViewController = MainViewController(viewModel: mainViewModel,
+                                                childControllers: childViewControllers)
+//        initializeViewControllers()
+        navigationController.setViewControllers([mainViewController!], animated: true)
         
-        let reviewsViewModel = ReviewsViewModel()
-        let reviewsVC = ReviewsViewController(viewModel: reviewsViewModel)
-        reviewsVC.view.frame = mainController.view.bounds
-        reviewsVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        mainController.addChild(reviewsVC)
-        mainController.view.addSubview(reviewsVC.view)
-        reviewsVC.didMove(toParent: mainController)
-        
+        setInitializeView()
         window?.rootViewController = navigationController
     }
     
-    private func initializeViewControllers() {
-        
+
+    private func setInitializeView() {
+        reviewsViewController!.view.frame = mainViewController!.view.bounds
+        reviewsViewController!.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mainViewController!.view.addSubview(reviewsViewController!.view)
+        reviewsViewController!.didMove(toParent: mainViewController)
     }
     
-    private func showReviews() {
-        let reviewsViewModel = ReviewsViewModel()
-        let reviewsVC = ReviewsViewController(viewModel: reviewsViewModel)
-        childViewControllers.append(reviewsVC)
-        //        reviewsVC.view.frame = mainController.view.bounds
-        //        reviewsVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        //        reviewsVC.didMove(toParent: mainController)
-    }
-    
-    private func showCritics() {
-        let criticListViewModel = CriticListViewModel()
-        let criticListVC = CriticListViewController(viewModel: criticListViewModel)
-        childViewControllers.append(criticListVC)
-    }
 }

@@ -15,15 +15,15 @@ final class MainModuleAssembly: Assembly {
             return MainViewModel()
         }
 
-        container.register(MainModule.self) { resolver in
-            let viewModel = resolver.resolve(MainViewModel.self)!
-            let view = MainViewController(viewModel: viewModel)
-            
-            return MainModule(
-                view: view,
-                input: viewModel,
-                output: viewModel
-            )
-        }
+//        container.register(MainModule.self) { resolver in
+//            let viewModel = resolver.resolve(MainViewModel.self)!
+//            let view = MainViewController(viewModel: viewModel)
+//            
+//            return MainModule(
+//                view: view,
+//                input: viewModel,
+//                output: viewModel
+//            )
+//        }
     }
 }

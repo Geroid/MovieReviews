@@ -10,9 +10,19 @@ import Swinject
 
 final class ReviewsModuleAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(ReviewsViewModel.self) { _ in
-            // replace '_' with 'resolver' and inject dependencies if necessary
-            return ReviewsViewModel()
+        container.register(NYTimesAPI.self) { _ in
+            return NYTimesAPI()
+        }
+        container.register(ReviewsViewModel.self) { resolver in
+            let service = resolver.resolve(NYTimesAPI.self)!
+            
+            return ReviewsViewModel(service: service)
+        }
+        
+        container.register(ReviewsViewController.self) { resolver in
+            let viewModel = resolver.resolve(ReviewsViewModel.self)!
+            
+            return ReviewsViewController(viewModel: viewModel)
         }
 
         container.register(ReviewsModule.self) { resolver in

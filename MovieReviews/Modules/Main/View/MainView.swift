@@ -25,7 +25,6 @@ final class MainView: UIView {
         super.init(frame: .zero)
         backgroundColor = .secondarySystemBackground
         setSegmentedControl()
-        customizeNavBar(index: 2)
     }
 
     @available(*, unavailable)
@@ -44,23 +43,6 @@ final class MainView: UIView {
         segmentedControl?.frame = CGRect(x: 40, y: 50, width: 300, height: 30)
         segmentedControl?.selectedSegmentIndex = 0
         segmentedControl!.backgroundColor = Colors.orange
-        segmentedControl?.addTarget(self, action: #selector(changeIndex(_:)), for: .valueChanged)
     }
     
-    @objc func changeIndex(_ sender: UISegmentedControl) {
-        switch segmentedControl?.selectedSegmentIndex {
-        case 0:
-            customizeNavBar(index: 0)
-        case 1:
-            customizeNavBar(index: 1)
-        default:
-            break
-        }
-    }
-    
-    private func customizeNavBar(index: Int) {
-//        headerLabel.text = segmentedControl.titleForSegment(at: index)
-        
-//        customNavbar!.backgroundColor = color
-    }
 }

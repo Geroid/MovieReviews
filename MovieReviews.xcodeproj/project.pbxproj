@@ -47,6 +47,7 @@
 		92C3028C24CE1EE80045EDDB /* ReviewMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3028B24CE1EE70045EDDB /* ReviewMapper.swift */; };
 		9499683D7F79811678DA9349 /* ReviewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA583D19B099D8BC4AC64ED2 /* ReviewsCoordinator.swift */; };
 		A1603A0CE5D464F310855A8F /* ReviewsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD7D982803078A2A9EB2B4 /* ReviewsModule.swift */; };
+		B23F1AEF25E8FCE4000FB15B /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23F1AEE25E8FCE4000FB15B /* UIViewController + Extensions.swift */; };
 		B2445FE825DA57D900B822E8 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2445FE725DA57D900B822E8 /* ReviewTableViewCell.swift */; };
 		B254E6A825D19D5E004008B4 /* CriticViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254E6A725D19D5E004008B4 /* CriticViewCell.swift */; };
 		B254E6AB25D19F5B004008B4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254E6AA25D19F5B004008B4 /* UIView+Extensions.swift */; };
@@ -106,6 +107,7 @@
 		9BAE6A0A1407E23316B70CB1 /* MainView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AB315492CDFBC6EF7C733B4D /* CriticListCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CriticListCoordinator.swift; sourceTree = "<group>"; };
 		AD016139AE2FA63C52B0C4FD /* ReviewsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsViewModel.swift; sourceTree = "<group>"; };
+		B23F1AEE25E8FCE4000FB15B /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 		B2445FE725DA57D900B822E8 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		B254E6A725D19D5E004008B4 /* CriticViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticViewCell.swift; sourceTree = "<group>"; };
 		B254E6AA25D19F5B004008B4 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			children = (
 				928B105F24CC55A1008E61F9 /* DateHelper.swift */,
 				B254E6AA25D19F5B004008B4 /* UIView+Extensions.swift */,
+				B23F1AEE25E8FCE4000FB15B /* UIViewController + Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				4CAADF78FB623978FA8B217C /* ReviewsModuleAssembly.swift in Sources */,
 				F573A5FD83CD5B446AF04BBA /* ReviewsViewController.swift in Sources */,
 				8EBB7134FD336AA744480F6F /* ReviewsView.swift in Sources */,
+				B23F1AEF25E8FCE4000FB15B /* UIViewController + Extensions.swift in Sources */,
 				3BC600B07A7580C649A6B3EA /* ReviewsViewModel.swift in Sources */,
 				9499683D7F79811678DA9349 /* ReviewsCoordinator.swift in Sources */,
 				E24F602247CA966B23324AE2 /* ReviewsCoordinatorAssembly.swift in Sources */,

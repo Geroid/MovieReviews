@@ -20,10 +20,10 @@ fileprivate enum ApplicationAssembly {
 
 class ApplicationCoordinator: BaseCoordinator<Void> {
     
-    private var navigationController: UINavigationController
+//    private var navigationController: UINavigationController
     
     override init() {
-        self.navigationController = UINavigationController()
+//        self.navigationController = UINavigationController()
         super.init()
         assembler = Assembler(assemblies())
         
@@ -34,7 +34,7 @@ class ApplicationCoordinator: BaseCoordinator<Void> {
     }
     
     override func start() {
-        let coordinator = MainCoordinator(with: navigationController)
+        let coordinator = MainCoordinator()
         
         coordinate(to: coordinator)
     }

@@ -11,9 +11,6 @@ import Swinject
 
 final class ReviewsCoordinatorAssembly: Assembly {
 	func assemble(container: Container) {
-		container.register(ReviewsCoordinator.self) { _ in
-			// replace '_' with 'resolver' and inject other coordinators if necessary
-			return ReviewsCoordinator()
-		}
+        
 	}
 }
