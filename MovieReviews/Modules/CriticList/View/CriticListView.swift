@@ -45,7 +45,8 @@ final class CriticListView: UIView {
             .rx
             .modelSelected(Critic.self)
             .bind(onNext: { critic in
-                debugPrint(critic)
+                viewModel.showCritic(critic: critic)
+//                debugPrint(critic)
             }).disposed(by: disposeBag)
     }
     
@@ -73,7 +74,7 @@ final class CriticListView: UIView {
     
     private func setupCollectionConstraints() {
         NSLayoutConstraint.activate([
-            myCollectionView!.topAnchor.constraint(equalTo: topAnchor, constant: 100),
+            myCollectionView!.topAnchor.constraint(equalTo: topAnchor),
             myCollectionView!.bottomAnchor.constraint(equalTo: bottomAnchor),
             myCollectionView!.leftAnchor.constraint(equalTo: leftAnchor),
             myCollectionView!.rightAnchor.constraint(equalTo: rightAnchor)

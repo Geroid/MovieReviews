@@ -30,7 +30,9 @@ class CriticMapper {
         let multimedia = json["multimedia"]
         let picruteUrl = multimedia.flatMap{ ($0 as AnyObject)["src"] } as? String ?? ""
         
-        let publicationDate = json["publication_date"] as? String
+        let publicationDate = json["publication_date"] as? Date
+        
+        
         
         return Review(
             title: json["display_title"] as? String ?? "",
@@ -38,6 +40,7 @@ class CriticMapper {
             byline: json["byline"] as? String ?? "",
             reviewURL: reviewUrl,
             pictureURL: picruteUrl,
-            date: publicationDate.flatMap{ DateHelper.dateFormatter.date(from: $0) } ?? Date() )
+            date: publicationDate ?? Date()
+        )
     }
 }

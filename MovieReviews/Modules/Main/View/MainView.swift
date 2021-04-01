@@ -10,15 +10,21 @@ import RxSwift
 import UIKit
 
 final class MainView: UIView {
+    
+    public var segmentedControl: UISegmentedControl?
 
     // MARK: - Private properties
 
+    private var segmentItems = ["Reviews", "Critics"]
+    
     private let disposeBag = DisposeBag()
 
     // MARK: - Initializers
 
     init() {
         super.init(frame: .zero)
+        backgroundColor = .secondarySystemBackground
+        setSegmentedControl()
     }
 
     @available(*, unavailable)
@@ -28,7 +34,15 @@ final class MainView: UIView {
 
     // MARK: - Public methods
 
-//    func bind(to viewModel: MainViewModelBindable) {
-//        // Bindings UI controls to view model's input/output
-//    }
+    func bind(to viewModel: MainViewModelBindable) {
+        // Bindings UI controls to view model's input/output
+    }
+    
+    private func setSegmentedControl() {
+        self.segmentedControl = UISegmentedControl(items: segmentItems)
+        segmentedControl?.frame = CGRect(x: 40, y: 50, width: 300, height: 30)
+        segmentedControl?.selectedSegmentIndex = 0
+        segmentedControl!.backgroundColor = Colors.orange
+    }
+    
 }

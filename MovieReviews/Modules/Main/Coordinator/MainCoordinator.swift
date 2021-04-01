@@ -12,26 +12,57 @@ import UIKit
 
 final class MainCoordinator: BaseCoordinator<Void> {
 	// Replace <Void> with some other result type if necessary
-    let viewModel = CriticListViewModel()
-	override func assemblies() -> [Assembly] {
+    
+    private var navigationController: UINavigationController
+    
+    private var mainViewController: MainViewController?
+    private var reviewsViewController: ReviewsViewController?
+    
+    public var childViewControllers = [UIViewController]()
+    
+    override init(){
+        self.navigationController = UINavigationController()
+        
+    }
+    
+    override func assemblies() -> [Assembly] {
 		return [
 			MainModuleAssembly(),
-            CriticModuleAssembly()
+            ReviewsModuleAssembly(),
+            CriticListModuleAssembly()
 		]
 	}
+    
 
-	override func start() {
-		// Implement actual start from window/nav controller/tab bar controller here
-        if let window = UIApplication.shared.keyWindow {
-//            let reviewsModule = resolver.resolve(ReviewsModule.self)
-            let criticListVC = CriticListViewController(viewModel: viewModel)
-//            let criticListModule = resolver.resolve(CriticListModule.self)!
-            
-            let controller = UINavigationController(nibName: nil, bundle: nil)
-            controller.setViewControllers([criticListVC], animated: true)
-//            controller.setViewControllers([criticListModule.view], animated: true)
-//            reviewsModule.view,
-            window.rootViewController = controller
-        }
-	}
+    override func start() {
+        // Implement actual start from window/nav controller/tab bar controller here
+        let window = UIApplication.shared.windows.filter {
+            $0.isKeyWindow
+        }.first
+//        reviewsView.assemble(container: con)
+        let reviewsView = resolver.resolve(ReviewsModule.self)
+        childViewControllers.append(reviewsView!.view)
+        reviewsViewController = reviewsView!.view as! ReviewsViewController
+        
+        let criticListModule = resolver.resolve(CriticListModule.self)
+        childViewControllers.append(criticListModule!.view)
+        
+        let mainViewModel = MainViewModel()
+        mainViewController = MainViewController(viewModel: mainViewModel,
+                                                childControllers: childViewControllers)
+//        initializeViewControllers()
+        navigationController.setViewControllers([mainViewController!], animated: true)
+        
+        setInitializeView()
+        window?.rootViewController = navigationController
+    }
+    
+
+    private func setInitializeView() {
+        reviewsViewController!.view.frame = mainViewController!.view.bounds
+        reviewsViewController!.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mainViewController!.view.addSubview(reviewsViewController!.view)
+        reviewsViewController!.didMove(toParent: mainViewController)
+    }
+    
 }

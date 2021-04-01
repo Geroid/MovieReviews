@@ -75,14 +75,6 @@
                     <constraint firstAttribute="bottom" secondItem="Acd-VM-2gL" secondAttribute="bottom" constant="8" id="t4J-ya-SdW"/>
                 </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="authorLabel" destination="iAn-MN-T8j" id="nq6-Eq-8m8"/>
-                <outlet property="dateLabel" destination="Afa-y7-16a" id="Xlt-39-mdP"/>
-                <outlet property="detailsLabel" destination="Qyf-V1-GHe" id="cx6-lj-8Ej"/>
-                <outlet property="linkButton" destination="bup-zY-3bu" id="nTY-tn-C1B"/>
-                <outlet property="reviewPhoto" destination="37n-W6-vKg" id="xqY-k2-XHt"/>
-                <outlet property="titleLabel" destination="Jmd-cp-aNu" id="HyW-15-Ut1"/>
-            </connections>
             <point key="canvasLocation" x="918.84057971014499" y="-131.25"/>
         </tableViewCell>
     </objects>

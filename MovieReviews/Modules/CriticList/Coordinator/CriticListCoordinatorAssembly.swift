@@ -9,11 +9,11 @@
 import InoMvvmc
 import Swinject
 
-final class CriticListCoordinatorAssembly: Assembly {
-	func assemble(container: Container) {
-		container.register(CriticListCoordinator.self) { _ in
-			// replace '_' with 'resolver' and inject other coordinators if necessary
-			return CriticListCoordinator()
-		}
-	}
-}
+//final class CriticListCoordinatorAssembly: Assembly {
+////	func assemble(container: Container) {
+////		container.register(CriticListCoordinator.self) { _ in
+////			// replace '_' with 'resolver' and inject other coordinators if necessary
+////			return CriticListCoordinator()
+////		}
+////	}
+//}

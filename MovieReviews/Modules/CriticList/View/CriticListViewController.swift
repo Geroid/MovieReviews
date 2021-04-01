@@ -25,6 +25,7 @@ final class CriticListViewController: UIViewController {
     init(viewModel: CriticListViewModelBindable) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.title = "Critics"
     }
 
     @available(*, unavailable)
@@ -39,6 +40,7 @@ final class CriticListViewController: UIViewController {
 
         let view = CriticListView()
         view.backgroundColor = .white
+        self.navigationController?.navigationBar.barTintColor = Colors.blue
         view.bind(to: viewModel)
 
         self.view = view
