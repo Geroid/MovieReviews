@@ -3,8 +3,8 @@
 This app write to learn new features.
 
 ### ToDo
-- [ ] Change architecture to MVVM
-- [ ] Try use RxSwift
+- [x] Change architecture to MVVM
+- [x] Try use RxSwift
 - [ ] Rewrite network with Alamofire
 - [ ] Fix layout
 - [ ] Add a list of reviews to critics
